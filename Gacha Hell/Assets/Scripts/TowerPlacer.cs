@@ -6,6 +6,7 @@ public class TowerPlacer : MonoBehaviour
 {
     public TowerBase[ ]towerOptions;
     private TowerBase currentlySelectedTower;
+    public DisplayIntValue valueDisplay;
     // Start is called before the first frame update
     void Start()
     {
@@ -22,7 +23,7 @@ public class TowerPlacer : MonoBehaviour
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 10f);
             Instantiate(currentlySelectedTower, hit.point, Quaternion.identity, transform);
-            
+            valueDisplay.ChangeValue(-currentlySelectedTower.cost);
         }
     }
 }

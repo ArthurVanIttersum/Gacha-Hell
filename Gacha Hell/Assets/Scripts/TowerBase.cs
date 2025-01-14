@@ -9,6 +9,7 @@ public class TowerBase : MonoBehaviour
     public ProjectileBase projectile;
     private IEnumerator coroutine;
     protected virtual float shotCooldownTime { get { return 10000; } }
+    public virtual int cost { get { return 0; } }
     private bool towerIsShooting = true;
     // Start is called before the first frame update
     void Start()
