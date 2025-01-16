@@ -4,11 +4,7 @@ using UnityEngine;
 
 public class Enemy1 : EnemyBase
 {
-    protected override float speed { get { return 1f; } }
+    protected override float speed { get { return 50f; } }
     protected override float health { get { return 10f; } }
-    
-    void Start()
-    {
-        
-    }
+    protected override int damage { get { return 1; } }
 }

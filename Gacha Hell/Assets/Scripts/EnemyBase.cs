@@ -9,8 +9,11 @@ public class EnemyBase : MonoBehaviour
     private SplineContainer splineContainer;
     private SplineAnimate splineAnimate;
 
+    private PlayerVariables playerVariables;
+
     protected virtual float speed { get { return 0.89f; } }
     protected virtual float health { get { return 100f; } }
+    protected virtual int damage { get { return 10; } }
 
     // Assigning the track Is in "awake" since it will allow it to automatically 
     // play the animation through "Play on awake" checkbox in spline animate script
@@ -18,7 +21,13 @@ public class EnemyBase : MonoBehaviour
     {
         AssignTrack();
         FollowTrack();
-        splineAnimate.MaxSpeed = speed; // Set the speed of the animation
+        splineAnimate.MaxSpeed = speed; // Set the speed of the animation for enemies
+        ReachedEndOfTrack();
+    }
+
+    void Start()
+    {
+        GetPlayerVariables();
     }
 
     private void AssignTrack()
@@ -43,13 +52,34 @@ public class EnemyBase : MonoBehaviour
         }
         else
         {
-            Debug.Log("Track not found, please add a track to the scene with the name 'Track'");
+            Debug.LogError("Track not found, please add a track to the scene with the name 'Track'");
         }
     }
 
     private void FollowTrack()
     {
-        // Follow the track
+        // Instantly makes enemies follow the track when spawned in scene
         splineAnimate.Play();
+    }
+
+    private void GetPlayerVariables()
+    {
+        playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
+        if (playerVariables == null)
+        {
+            Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+        }
+    }
+
+    private void ReachedEndOfTrack()
+    {
+        splineAnimate.Completed += OnReachedEndOfTrack;
+    }
+    
+    private void OnReachedEndOfTrack()
+    {
+        // player takes damage when enemy reaches the end of the track
+        playerVariables.playerHealth -= damage;
+        Destroy(gameObject);
     }
 }
