@@ -8,7 +8,7 @@ public class EnemyPlacer : MonoBehaviour
     private IEnumerator coroutine;
     protected float spawncooldownTime = 1f;
     private bool EnemyPlacerIsPlacing = true;
-    public List<EnemyBase> allEnemies;
+    public List<EnemyBase> allEnemies = null;
     // Start is called before the first frame update
     void Start()
     {

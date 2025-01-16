@@ -4,14 +4,10 @@ using UnityEngine;
 
 public class Enemy1 : EnemyBase
 {
-    // Start is called before the first frame update
+    protected override float speed { get { return 1f; } }
+    protected override float health { get { return 10f; } }
+    
     void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
     {
         
     }

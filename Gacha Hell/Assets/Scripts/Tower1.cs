@@ -10,6 +10,12 @@ public class Tower1 : TowerBase
     public override int cost { get { return 15; } }
     protected override void Shoot()
     {
-        Instantiate(projectile,transform.position, Quaternion.identity, transform);
+        EnemyBase target = ChooseTarget();
+        if (target != null)
+        {
+            ProjectileBase newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
+            newProjectile.target = ChooseTarget();
+        }
+        
     }
 }
