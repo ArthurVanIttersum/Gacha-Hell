@@ -49,7 +49,6 @@ public class TowerBase : MonoBehaviour
         
         for (int i = 0; i < enemyPlacer.allEnemies.Count; i++)
         {
-            Debug.Log("something is happening in the loop");
             //Debug.Log(SomeEnemies);
             print(enemyPlacer.allEnemies[i]);
             Vector3 position = enemyPlacer.allEnemies[i].transform.position;
@@ -57,10 +56,6 @@ public class TowerBase : MonoBehaviour
             {
                 SomeEnemies.Add(enemyPlacer.allEnemies[i]);
 
-            }
-            else
-            {
-                Debug.Log("could not find enemy");
             }
         }
         if (SomeEnemies == null)
@@ -77,7 +72,7 @@ public class TowerBase : MonoBehaviour
         //keeping it simple for now.
         //first enemy in list is the one it chooses as a target
         EnemyBase[] enemiesInrange = GetEnemiesInrange();
-        if (enemiesInrange == null)
+        if (enemiesInrange == null || enemiesInrange.Length == 0)
         {
             return null;
         }
