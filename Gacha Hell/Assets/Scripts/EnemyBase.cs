@@ -12,8 +12,10 @@ public class EnemyBase : MonoBehaviour
     private PlayerVariables playerVariables;
 
     protected virtual float speed { get { return 0.89f; } }
-    protected virtual float health { get { return 100f; } }
+    protected virtual float maxHealth { get { return 100f; } }
     protected virtual int damage { get { return 10; } }
+    public float health;
+    
 
     // Assigning the track Is in "awake" since it will allow it to automatically 
     // play the animation through "Play on awake" checkbox in spline animate script
@@ -22,6 +24,7 @@ public class EnemyBase : MonoBehaviour
         AssignTrack();
         FollowTrack();
         splineAnimate.MaxSpeed = speed; // Set the speed of the animation for enemies
+        health = maxHealth;
         ReachedEndOfTrack();
     }
 
@@ -82,4 +85,16 @@ public class EnemyBase : MonoBehaviour
         playerVariables.playerHealth -= damage;
         Destroy(gameObject);
     }
+
+    public void OnTriggerEnter(Collider other)
+    {
+        health -= other.GetComponent<ProjectileBase>().damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+        Destroy(other.gameObject);
+    }
+
+    
 }

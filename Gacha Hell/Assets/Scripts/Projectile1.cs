@@ -7,6 +7,7 @@ public class Projectile1 : ProjectileBase
 {
     private Vector3 direction;
     protected override float movementSpeed { get { return 0.5f; } }
+    public override float damage { get { return 5; } }
     protected override void CalculatePath()
     {
         direction = targetPosition - startPosition;
