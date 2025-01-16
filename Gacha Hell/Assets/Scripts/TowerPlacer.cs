@@ -24,7 +24,7 @@ public class TowerPlacer : MonoBehaviour
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            Physics.Raycast(ray, out hit, 10f);
+            Physics.Raycast(ray, out hit, 100f);
             if (theTilemap.GetTile(theTilemap.WorldToCell(hit.point)) == tileBase[1])
             {
                 Instantiate(currentlySelectedTower, hit.point, Quaternion.identity, transform);
