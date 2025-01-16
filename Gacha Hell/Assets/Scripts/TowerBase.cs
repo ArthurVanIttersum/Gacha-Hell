@@ -13,11 +13,12 @@ public class TowerBase : MonoBehaviour
     protected virtual float range { get { return 10000; } }
     public virtual int cost { get { return 0; } }
     private bool towerIsShooting = true;
-    public EnemyPlacer enemyPlacer;
+    private EnemyPlacer enemyPlacer;
     public List<EnemyBase> SomeEnemies = null;
     // Start is called before the first frame update
     void Start()
     {
+        enemyPlacer = GameObject.Find("EnemyPlacer").GetComponent<EnemyPlacer>(); // Find the Enemyplacer object in the scene
         StartShooting();
     }
 
@@ -46,7 +47,7 @@ public class TowerBase : MonoBehaviour
         {
             return null;
         }
-        
+        SomeEnemies.Clear();
         for (int i = 0; i < enemyPlacer.allEnemies.Count; i++)
         {
             //Debug.Log(SomeEnemies);
