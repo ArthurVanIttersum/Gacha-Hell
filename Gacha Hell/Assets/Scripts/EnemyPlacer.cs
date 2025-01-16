@@ -1,17 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using static UnityEngine.Rendering.DebugUI;
 
-public class TowerBase : MonoBehaviour
+public class EnemyPlacer : MonoBehaviour
 {
-    public ProjectileBase projectile;
+    public EnemyBase[] PossibleEnemies;
     private IEnumerator coroutine;
-    protected virtual float shotCooldownTime { get { return 10000; } }
-    public virtual int cost { get { return 0; } }
-    private bool towerIsShooting = true;
-    public EnemyPlacer enemyPlacer;
+    protected float spawncooldownTime = 1f;
+    private bool EnemyPlacerIsPlacing = true;
+    public List<EnemyBase> allEnemies;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,7 +17,7 @@ public class TowerBase : MonoBehaviour
 
     protected void StartShooting()
     {
-        coroutine = WaitAndPrint(shotCooldownTime);
+        coroutine = WaitAndPrint(spawncooldownTime);
         StartCoroutine(coroutine);
 
         print("Coroutine started");
@@ -28,16 +25,16 @@ public class TowerBase : MonoBehaviour
 
     private IEnumerator WaitAndPrint(float waitTime)
     {
-        while (towerIsShooting)
+        while (EnemyPlacerIsPlacing)
         {
             print("coroutine loop?");
-            Shoot();
+            Spawn();
             yield return new WaitForSeconds(waitTime);
         }
     }
 
-    protected virtual void Shoot()
+    private void Spawn()
     {
-        
+        allEnemies.Add(Instantiate(PossibleEnemies[0], transform.position, Quaternion.identity, transform));
     }
 }
