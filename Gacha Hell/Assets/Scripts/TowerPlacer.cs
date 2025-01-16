@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Tilemaps;
 
@@ -7,13 +8,17 @@ public class TowerPlacer : MonoBehaviour
 {
     public TowerBase[ ]towerOptions;
     private TowerBase currentlySelectedTower = null;
-    public DisplayIntValue valueDisplay;
+    public PlayerVariables playerVariables;
     public Tilemap theTilemap;
     public TileBase[ ]tileBase = new TileBase[4];
     // Start is called before the first frame update
     void Start()
     {
-        
+        playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
+        if (playerVariables == null)
+        {
+            Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+        }
     }
 
     // Update is called once per frame
@@ -31,11 +36,9 @@ public class TowerPlacer : MonoBehaviour
             if (theTilemap.GetTile(theTilemap.WorldToCell(hit.point)) == tileBase[1])
             {
                 Instantiate(currentlySelectedTower, hit.point, Quaternion.identity, transform);
-                valueDisplay.ChangeValue(-currentlySelectedTower.cost);
+                playerVariables.playerMoney -= currentlySelectedTower.cost;
+                Debug.Log(playerVariables.playerMoney);
             }
-            
-            
-            
         }
     }
 
