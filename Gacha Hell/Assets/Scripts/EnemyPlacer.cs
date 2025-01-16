@@ -15,6 +15,11 @@ public class EnemyPlacer : MonoBehaviour
         StartShooting();
     }
 
+    void Update()
+    {
+        RemoveDestroyedEnemies();
+    }
+
     protected void StartShooting()
     {
         coroutine = WaitAndPrint(spawncooldownTime);
@@ -36,5 +41,16 @@ public class EnemyPlacer : MonoBehaviour
     private void Spawn()
     {
         allEnemies.Add(Instantiate(PossibleEnemies[0], transform.position, Quaternion.identity, transform));
+    }
+    
+    public void RemoveDestroyedEnemies()
+    {
+        for (int i = allEnemies.Count - 1; i >= 0; i--)
+        {
+            if (allEnemies[i] == null || allEnemies[i].gameObject == null)  // Checking if the enemy object or reference is destroyed
+            {
+                allEnemies.RemoveAt(i); // Remove the destroyed enemy from the list
+            }
+        }
     }
 }
