@@ -9,6 +9,7 @@ public class EnemyPlacer : MonoBehaviour
     protected float spawncooldownTime = 1f;
     private bool EnemyPlacerIsPlacing = true;
     public List<EnemyBase> allEnemies = null;
+    public float speedIncrease = 0.95f;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +33,7 @@ public class EnemyPlacer : MonoBehaviour
     {
         while (EnemyPlacerIsPlacing)
         {
+            waitTime *= speedIncrease;
             print("coroutine loop?");
             Spawn();
             yield return new WaitForSeconds(waitTime);

@@ -3586,6 +3586,7 @@ MonoBehaviour:
   PossibleEnemies:
   - {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
   allEnemies: []
+  speedIncrease: 0.99
 --- !u!4 &2037514369
 Transform:
   m_ObjectHideFlags: 0
