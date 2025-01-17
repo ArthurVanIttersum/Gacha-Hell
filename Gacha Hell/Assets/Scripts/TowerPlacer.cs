@@ -33,7 +33,7 @@ public class TowerPlacer : MonoBehaviour
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100f);
-            if (theTilemap.GetTile(theTilemap.WorldToCell(hit.point)) == tileBase[1])
+            if (theTilemap.GetTile(theTilemap.WorldToCell(hit.point)) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost)
             {
                 Instantiate(currentlySelectedTower, hit.point, Quaternion.identity, transform);
                 playerVariables.playerMoney -= currentlySelectedTower.cost;

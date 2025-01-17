@@ -7,5 +7,5 @@ public class Enemy1 : EnemyBase
     protected override float speed { get { return 5f; } }
     protected override float maxHealth { get { return 10f; } }
     protected override int damage { get { return 1; } }
-
+    protected override int money { get { return 5; } }
 }

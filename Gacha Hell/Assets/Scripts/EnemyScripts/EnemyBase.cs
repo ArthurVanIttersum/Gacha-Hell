@@ -14,6 +14,7 @@ public class EnemyBase : MonoBehaviour
     protected virtual float speed { get { return 0.89f; } }
     protected virtual float maxHealth { get { return 100f; } }
     protected virtual int damage { get { return 10; } }
+    protected virtual int money { get { return 10; } }
     public float health;
     
 
@@ -92,6 +93,7 @@ public class EnemyBase : MonoBehaviour
         if (health <= 0)
         {
             Destroy(gameObject);
+            playerVariables.playerMoney += money;
         }
         Destroy(other.gameObject);
     }
