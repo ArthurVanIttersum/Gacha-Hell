@@ -1,0 +1,54 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf1e0257bcf20e54abdc3cc48647b2c2, type: 3}
+  m_Name: New Waves
+  m_EditorClassIdentifier: 
+  theWaves:
+  - clumps:
+    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 10
+      spawncooldown: 3
+      startDelay: 0
+    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 10
+      spawncooldown: 0.1
+      startDelay: 10
+    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 3
+      spawncooldown: 0.5
+      startDelay: 20
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
