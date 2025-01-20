@@ -1733,6 +1733,9 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a8f5ece109ffd144d885666e69b67d82, type: 2}
   - {fileID: 11400000, guid: fc3330f52f859554bbc0eb38b6579743, type: 2}
   - {fileID: 11400000, guid: 697cb2cda6968da4f90308e4510219d8, type: 2}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 512
 --- !u!4 &782561711
 Transform:
   m_ObjectHideFlags: 0
@@ -2296,7 +2299,7 @@ GameObject:
   - component: {fileID: 1384092718}
   - component: {fileID: 1384092717}
   - component: {fileID: 1384092716}
-  m_Layer: 0
+  m_Layer: 9
   m_Name: Plane
   m_TagString: Untagged
   m_Icon: {fileID: 0}
