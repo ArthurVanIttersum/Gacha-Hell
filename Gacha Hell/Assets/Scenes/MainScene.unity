@@ -1736,6 +1736,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 512
+  previewMaterial: {fileID: 2100000, guid: e0e2ab0942de2a645ad1298fd089ef01, type: 2}
+  previewMaterialRed: {fileID: 2100000, guid: 1a3b2b76b59d8af449bcc1265fc7e026, type: 2}
 --- !u!4 &782561711
 Transform:
   m_ObjectHideFlags: 0
