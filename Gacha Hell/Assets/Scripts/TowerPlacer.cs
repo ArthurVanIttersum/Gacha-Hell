@@ -13,6 +13,10 @@ public class TowerPlacer : MonoBehaviour
     public TileBase[ ]tileBase = new TileBase[4];
     private bool hoveringOverButton;
     public LayerMask layerMask;
+
+    // A dictionary to keep track of the towers that have been placed
+    private Dictionary<Vector3Int, GameObject> placedTowers = new Dictionary<Vector3Int, GameObject>();
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,12 +49,17 @@ public class TowerPlacer : MonoBehaviour
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100f, layerMask);
             Vector3Int gridPosition = theTilemap.WorldToCell(hit.point);
-            if (theTilemap.GetTile(gridPosition) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost)
+
+            if (theTilemap.GetTile(gridPosition) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost && !placedTowers.ContainsKey(gridPosition))
             {
-                Instantiate(currentlySelectedTower, theTilemap.GetCellCenterWorld(gridPosition), Quaternion.identity, transform);
+                // Instantiate the tower
+                GameObject newTower = Instantiate(currentlySelectedTower.gameObject, theTilemap.GetCellCenterWorld(gridPosition), Quaternion.identity, transform);
+
+                // Register the tower position in the dictionary
+                placedTowers[gridPosition] = newTower;
                 
                 playerVariables.playerMoney -= currentlySelectedTower.cost;
-                Debug.Log(playerVariables.playerMoney);
+                currentlySelectedTower = null;
             }
         }
     }
