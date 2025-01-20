@@ -2,82 +2,74 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-using UnityEngine.Splines;
-using static UnityEngine.Rendering.DebugUI;
+
 
 public class TowerBase : MonoBehaviour
 {
     public ProjectileBase projectile;
     private IEnumerator coroutine;
     protected virtual float shotCooldownTime { get { return 10000; } }
-    protected virtual float range { get { return 10000; } }
+    protected virtual float range { get { return 100; } }
     public virtual int cost { get { return 0; } }
     private bool towerIsShooting = true;
-    private EnemyPlacer enemyPlacer;
-    public List<EnemyBase> SomeEnemies = null;
+    private Transform towerRange;
+    private Collider towerRangeCollider;
+    public List<EnemyBase> enemiesInRange = null;
     // Start is called before the first frame update
     void Start()
     {
-        enemyPlacer = GameObject.Find("EnemyPlacer").GetComponent<EnemyPlacer>(); // Find the Enemyplacer object in the scene
+        towerRange = transform.Find("TowerRange");
+        towerRangeCollider = towerRange.GetComponent<Collider>();
         StartShooting();
+        SetRange();
     }
 
     protected void StartShooting()
     {
-        print("towerbaseStartshootingIsBeingActivated");
-        coroutine = WaitAndPrint(shotCooldownTime);
+        coroutine = Shooting(shotCooldownTime);
         StartCoroutine(coroutine);
-
-        print("Coroutine started");
     }
 
-    private IEnumerator WaitAndPrint(float waitTime)
+    private IEnumerator Shooting(float waitTime)
     {
         while (towerIsShooting)
         {
-            print("coroutine loop?");
             Shoot();
             yield return new WaitForSeconds(waitTime);
         }
     }
 
-    protected EnemyBase[] GetEnemiesInrange()
+    protected void SetRange()
     {
-        if (enemyPlacer.allEnemies == null)
-        {
-            return null;
-        }
-        SomeEnemies.Clear();
-        for (int i = 0; i < enemyPlacer.allEnemies.Count; i++)
-        {
-            //Debug.Log(SomeEnemies);
-            print(enemyPlacer.allEnemies[i]);
-            Vector3 position = enemyPlacer.allEnemies[i].transform.position;
-            if (Vector3.Distance(position, transform.position) < range)
-            {
-                SomeEnemies.Add(enemyPlacer.allEnemies[i]);
+        towerRange.localScale = new Vector3(range, range, range);
+    }
 
-            }
-        }
-        if (SomeEnemies == null)
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
         {
-            return null;
+            enemiesInRange.Add(other.gameObject.GetComponent<EnemyBase>());
         }
+    }
 
-        return SomeEnemies.ToArray();
-
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Enemy")
+        {
+            enemiesInRange.Remove(other.gameObject.GetComponent<EnemyBase>());
+        }
     }
 
     protected EnemyBase ChooseTarget()
     {
-        //keeping it simple for now.
+        enemiesInRange.RemoveAll(item => item == null); // removes all null entries from the list
+
         //first enemy in list is the one it chooses as a target
-        EnemyBase[] enemiesInrange = GetEnemiesInrange();
-        if (enemiesInrange == null || enemiesInrange.Length == 0)
-        {
+        if (enemiesInRange == null || enemiesInRange.Count == 0)
+        {  
             return null;
         }
-        return enemiesInrange[0];
+        return enemiesInRange[0];
     }
 
 
