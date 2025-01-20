@@ -87,16 +87,15 @@ public class EnemyBase : MonoBehaviour
         Destroy(gameObject);
     }
 
-    public void OnTriggerEnter(Collider other)
+    
+
+    public virtual void TakeDamage(float damageDealt)
     {
-        health -= other.GetComponent<ProjectileBase>().damage;
+        health -= damageDealt;
         if (health <= 0)
         {
             Destroy(gameObject);
             playerVariables.playerMoney += money;
         }
-        Destroy(other.gameObject);
     }
-
-    
 }

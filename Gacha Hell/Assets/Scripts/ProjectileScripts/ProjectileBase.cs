@@ -10,6 +10,8 @@ public class ProjectileBase : MonoBehaviour
     protected float lifeTime = 0;
     protected virtual float movementSpeed { get { return 0.001f; } }
     public virtual float damage { get { return 10000; } }
+    protected virtual int pierce { get { return 1; } }
+    protected int pierced = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -38,5 +40,21 @@ public class ProjectileBase : MonoBehaviour
     protected virtual void FollowPath()
     {
 
+    }
+
+    public virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Enemy")
+        {
+            if (pierced < pierce)
+            {
+                pierced++;
+                other.GetComponent<EnemyBase>().TakeDamage(damage);
+            }
+            if (pierced == pierce)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
 }
