@@ -11,6 +11,8 @@ public class TowerPlacer : MonoBehaviour
     public PlayerVariables playerVariables;
     public Tilemap theTilemap;
     public TileBase[ ]tileBase = new TileBase[4];
+    private bool hoveringOverButton;
+    public LayerMask layerMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,18 +26,29 @@ public class TowerPlacer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Mouse1))
+        {
+            currentlySelectedTower = null;
+        }
         if (currentlySelectedTower == null)
+        {
+            return;
+        }
+        if (hoveringOverButton)
         {
             return;
         }
         if (Input.GetKeyDown(KeyCode.Mouse0))
         {
+            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
-            Physics.Raycast(ray, out hit, 100f);
-            if (theTilemap.GetTile(theTilemap.WorldToCell(hit.point)) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost)
+            Physics.Raycast(ray, out hit, 100f, layerMask);
+            Vector3Int gridPosition = theTilemap.WorldToCell(hit.point);
+            if (theTilemap.GetTile(gridPosition) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost)
             {
-                Instantiate(currentlySelectedTower, hit.point, Quaternion.identity, transform);
+                Instantiate(currentlySelectedTower, theTilemap.GetCellCenterWorld(gridPosition), Quaternion.identity, transform);
+                
                 playerVariables.playerMoney -= currentlySelectedTower.cost;
                 Debug.Log(playerVariables.playerMoney);
             }
@@ -60,5 +73,10 @@ public class TowerPlacer : MonoBehaviour
         {
             Debug.Log("invalid tower name");
         }
+    }
+
+    public void setHoveringOverButton(bool newValue)
+    {
+        hoveringOverButton = newValue;
     }
 }
