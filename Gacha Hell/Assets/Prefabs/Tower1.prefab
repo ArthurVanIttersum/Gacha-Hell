@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1645996510281916821}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.3956118, y: 1.2582891, z: 0.80657345}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4190586311869857436, guid: 9783a5c2fee62b14cb8da3e3f4fb6056, type: 3}
+  PreferredEnemyName: Enemy2
   enemiesInRange: []
-  currentTargeting: 0
+  currentTargeting: 3
 --- !u!1 &6274409183978733114
 GameObject:
   m_ObjectHideFlags: 0

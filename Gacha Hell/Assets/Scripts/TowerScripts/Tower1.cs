@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class Tower1 : TowerBase
 {
-    protected override float shotCooldownTime { get { return 1; } }
+    protected override float shotCooldownTime { get { return 0.5f; } }
     protected override float range { get { return 5; } }
     public override int cost { get { return 15; } }
     protected override void Shoot()
@@ -15,7 +15,7 @@ public class Tower1 : TowerBase
         if (target != null)
         {
             ProjectileBase newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
-            newProjectile.target = ChooseTarget();
+            newProjectile.target = target;
         }
         
     }

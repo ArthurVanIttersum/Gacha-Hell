@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using System.Linq.Expressions;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Splines;
@@ -11,6 +13,8 @@ public class TowerBase : MonoBehaviour
     protected virtual float shotCooldownTime { get { return 10000; } }
     protected virtual float range { get { return 100; } }
     public virtual int cost { get { return 0; } }
+    public string PreferredEnemyName = "Write down the name of the enemy that the tower prefers";
+    
     private bool towerIsShooting = true;
     private Transform towerRange;
     private Collider towerRangeCollider;
@@ -80,59 +84,79 @@ public class TowerBase : MonoBehaviour
 
         float value = float.MaxValue;
         int lastBest = 0;
-        if (currentTargeting == TargetingOptions.Close)
+        switch (currentTargeting)
         {
-            for (int i = 0; i < enemiesInRange.Count; i++)
-            {
-                float distance = Vector3.Distance(enemiesInRange[i].transform.position, transform.position);
-                if (distance < value)
+            case TargetingOptions.Close:
+                for (int i = 0; i < enemiesInRange.Count; i++)
                 {
-                    value = distance;
-                    lastBest = i;
+                    float distance = Vector3.Distance(enemiesInRange[i].transform.position, transform.position);
+                    if (distance < value)
+                    {
+                        value = distance;
+                        lastBest = i;
+                    }
                 }
-            }
-        }
-        if (currentTargeting == TargetingOptions.Last)
-        {
-            for (int i = 0; i < enemiesInRange.Count; i++)
-            {
-                float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
-                if (distance < value)
+                break;
+            case TargetingOptions.Last:
+                for (int i = 0; i < enemiesInRange.Count; i++)
                 {
-                    value = distance;
-                    lastBest = i;
+                    float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                    if (distance < value)
+                    {
+                        value = distance;
+                        lastBest = i;
+                    }
                 }
-            }
-        }
-        if (currentTargeting == TargetingOptions.First)
-        {
-            value = 0;
-            for (int i = 0; i < enemiesInRange.Count; i++)
-            {
-                float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
-                if (distance > value)
+                break;
+            case TargetingOptions.First:
+                value = 0;
+                for (int i = 0; i < enemiesInRange.Count; i++)
                 {
-                    value = distance;
-                    lastBest = i;
+                    float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                    if (distance > value)
+                    {
+                        value = distance;
+                        lastBest = i;
+                    }
                 }
-            }
-        }
-        if (currentTargeting == TargetingOptions.Preferred)
-        {//not properly implemented yet
-            //waiting for designer answer
-            value = 0;
-            for (int i = 0; i < enemiesInRange.Count; i++)
-            {
-                float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
-                if (distance > value)
-                {
-                    value = distance;
-                    lastBest = i;
-                }
-            }
-        }
+                break;
+            case TargetingOptions.Preferred:
+                List<EnemyBase> enemiesOfPreferredType = new List<EnemyBase>{};
 
-
+                for (int i = 0; i < enemiesInRange.Count; i++)
+                {
+                    if (enemiesInRange[i].gameObject.name == PreferredEnemyName + "(Clone)")
+                    {
+                        print(enemiesInRange[i].name);
+                        
+                        enemiesOfPreferredType.Add(enemiesInRange[i]);
+                    }
+                    else
+                    {
+                        print(enemiesInRange[i].name);
+                    }
+                }
+                if (enemiesOfPreferredType == null || enemiesOfPreferredType.Count == 0)// make sure the list makes sense
+                {
+                    print("ListIsEmpty");
+                    return null;
+                }
+                value = 0;
+                for (int i = 0; i < enemiesOfPreferredType.Count; i++)
+                {
+                    float distance = enemiesOfPreferredType[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesOfPreferredType[i].speed;
+                    if (distance > value)
+                    {
+                        value = distance;
+                        lastBest = i;
+                    }
+                }
+                print(enemiesOfPreferredType[lastBest].name);
+                return enemiesOfPreferredType[lastBest];
+            default:
+                print("warning : chosen target option is undifined");
+                break;
+        }
         return enemiesInRange[lastBest];
     }
 
