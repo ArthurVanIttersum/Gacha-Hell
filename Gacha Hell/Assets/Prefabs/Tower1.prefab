@@ -151,6 +151,7 @@ MonoBehaviour:
   projectile: {fileID: 4190586311869857436, guid: 9783a5c2fee62b14cb8da3e3f4fb6056, type: 3}
   PreferredEnemyName: Enemy2
   enemiesInRange: []
+  preferredEnemy: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
   currentTargeting: 3
 --- !u!1 &6274409183978733114
 GameObject:

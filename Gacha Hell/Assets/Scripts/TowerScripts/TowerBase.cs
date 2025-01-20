@@ -19,6 +19,7 @@ public class TowerBase : MonoBehaviour
     private Transform towerRange;
     private Collider towerRangeCollider;
     public List<EnemyBase> enemiesInRange = null;
+    public EnemyBase preferredEnemy;
 
     public enum TargetingOptions
     {
@@ -122,19 +123,13 @@ public class TowerBase : MonoBehaviour
                 break;
             case TargetingOptions.Preferred:
                 List<EnemyBase> enemiesOfPreferredType = new List<EnemyBase>{};
-
                 for (int i = 0; i < enemiesInRange.Count; i++)
                 {
-                    if (enemiesInRange[i].gameObject.name == PreferredEnemyName + "(Clone)")
+                    if (enemiesInRange[i].GetType() == preferredEnemy.GetType())
                     {
-                        print(enemiesInRange[i].name);
-                        
                         enemiesOfPreferredType.Add(enemiesInRange[i]);
                     }
-                    else
-                    {
-                        print(enemiesInRange[i].name);
-                    }
+                    
                 }
                 if (enemiesOfPreferredType == null || enemiesOfPreferredType.Count == 0)// make sure the list makes sense
                 {
@@ -151,7 +146,6 @@ public class TowerBase : MonoBehaviour
                         lastBest = i;
                     }
                 }
-                print(enemiesOfPreferredType[lastBest].name);
                 return enemiesOfPreferredType[lastBest];
             default:
                 print("warning : chosen target option is undifined");
