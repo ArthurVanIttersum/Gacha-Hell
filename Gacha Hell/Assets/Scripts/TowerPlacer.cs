@@ -102,6 +102,8 @@ public class TowerPlacer : MonoBehaviour
         hoveringOverButton = newValue;
     }
 
+    // Preview code ------------
+
     private void ShowPreview()
     {
         // Destroy the current preview
@@ -110,8 +112,9 @@ public class TowerPlacer : MonoBehaviour
             Destroy(currentPreview);
         }
 
-        // Create a new preview instance
         currentPreview = Instantiate(currentlySelectedTower).gameObject;
+        currentPreview.transform.position = new Vector3(0, 100, 0); // Move the preview higher up, off-screen to avoid appearing at grid 0,0
+        currentPreview.transform.Find("TowerRange").GetComponentInChildren<MeshRenderer>().enabled = true;
         ApplyPreviewMaterial(currentPreview);
     }
 
