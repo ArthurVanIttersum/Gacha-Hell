@@ -11,7 +11,7 @@ public class EnemyBase : MonoBehaviour
 
     private PlayerVariables playerVariables;
 
-    protected virtual float speed { get { return 0.89f; } }
+    public virtual float speed { get { return 0.89f; } }
     protected virtual float maxHealth { get { return 100f; } }
     protected virtual int damage { get { return 10; } }
     protected virtual int money { get { return 10; } }

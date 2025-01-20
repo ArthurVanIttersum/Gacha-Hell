@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
-
+using UnityEngine.Splines;
 
 public class TowerBase : MonoBehaviour
 {
@@ -15,6 +15,15 @@ public class TowerBase : MonoBehaviour
     private Transform towerRange;
     private Collider towerRangeCollider;
     public List<EnemyBase> enemiesInRange = null;
+
+    public enum TargetingOptions
+    {
+        First,
+        Last,
+        Close,
+        Preferred
+    }
+    public TargetingOptions currentTargeting = TargetingOptions.Close;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,12 +73,67 @@ public class TowerBase : MonoBehaviour
     {
         enemiesInRange.RemoveAll(item => item == null); // removes all null entries from the list
 
-        //first enemy in list is the one it chooses as a target
-        if (enemiesInRange == null || enemiesInRange.Count == 0)
+        if (enemiesInRange == null || enemiesInRange.Count == 0)// make sure the list makes sense
         {  
             return null;
         }
-        return enemiesInRange[0];
+
+        float value = float.MaxValue;
+        int lastBest = 0;
+        if (currentTargeting == TargetingOptions.Close)
+        {
+            for (int i = 0; i < enemiesInRange.Count; i++)
+            {
+                float distance = Vector3.Distance(enemiesInRange[i].transform.position, transform.position);
+                if (distance < value)
+                {
+                    value = distance;
+                    lastBest = i;
+                }
+            }
+        }
+        if (currentTargeting == TargetingOptions.Last)
+        {
+            for (int i = 0; i < enemiesInRange.Count; i++)
+            {
+                float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                if (distance < value)
+                {
+                    value = distance;
+                    lastBest = i;
+                }
+            }
+        }
+        if (currentTargeting == TargetingOptions.First)
+        {
+            value = 0;
+            for (int i = 0; i < enemiesInRange.Count; i++)
+            {
+                float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                if (distance > value)
+                {
+                    value = distance;
+                    lastBest = i;
+                }
+            }
+        }
+        if (currentTargeting == TargetingOptions.Preferred)
+        {//not properly implemented yet
+            //waiting for designer answer
+            value = 0;
+            for (int i = 0; i < enemiesInRange.Count; i++)
+            {
+                float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                if (distance > value)
+                {
+                    value = distance;
+                    lastBest = i;
+                }
+            }
+        }
+
+
+        return enemiesInRange[lastBest];
     }
 
 
