@@ -152,7 +152,7 @@ MonoBehaviour:
   PreferredEnemyName: Enemy2
   enemiesInRange: []
   preferredEnemy: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-  currentTargeting: 3
+  currentTargeting: 0
 --- !u!1 &6274409183978733114
 GameObject:
   m_ObjectHideFlags: 0

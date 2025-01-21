@@ -8,21 +8,38 @@ public class HealthUI : MonoBehaviour
     public TextMeshProUGUI healthText; // Reference to the UI text
     private PlayerVariables playerVariables; // Reference to the PlayerVariables script
 
-    void Start()
+    void Awake() // Not in start since we want to subscribe to the event before it is called
     {
         playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
         if (playerVariables == null)
         {
             Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
         }
+        UpdateHealthText(playerVariables.playerHealth);
     }
 
-    void Update()
+    void UpdateHealthText(int newHealth)
     {
-        // Update the text
-        if (playerVariables != null && healthText != null)
+        if (healthText != null)
         {
-            healthText.text = "Health: " + playerVariables.playerHealth.ToString("F0"); // Show as an integer
+            healthText.text = "Health: " + newHealth.ToString("F0");
         }
+    }
+
+    // --------- Event Subscriptions ---------
+    void OnEnable() // Subscribe to the event
+    {
+        if (playerVariables != null)
+        {
+            playerVariables.OnHealthChanged += UpdateHealthText;
+        }
+    }
+
+    void OnDisable() // Unsubscribe from the event if the object is disabled
+    {
+        if (playerVariables != null)
+        {
+            playerVariables.OnHealthChanged -= UpdateHealthText;
+        }        
     }
 }

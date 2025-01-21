@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting;
+using System;
 using UnityEngine;
 using static Waves;
 
@@ -12,7 +12,8 @@ public class EnemyPlacer : MonoBehaviour
     protected float spawncooldownTime = 1f;
     public List<EnemyBase> allEnemies = null;
     public Waves waves;
-    public int currentWave = 0;
+    public int _currentWave = 0;
+    public event Action<int> OnWaveChanged;
     public bool autoStartActive;
     private int enemiesThisRound = 0;
     private int enemiesSpawned = 0;
@@ -26,10 +27,17 @@ public class EnemyPlacer : MonoBehaviour
     }
     private roundState currentRoundState = roundState.Complete;
 
-    // Start is called before the first frame update
-    void Start()
+    public int currentWave
     {
-        
+        get => _currentWave;
+        set
+        {
+            if (Mathf.Abs(_currentWave - value) > Mathf.Epsilon) // Check if value changed
+            {
+                _currentWave = value;
+                OnWaveChanged?.Invoke(_currentWave); // Trigger event
+            }
+        }
     }
 
     void Update()
