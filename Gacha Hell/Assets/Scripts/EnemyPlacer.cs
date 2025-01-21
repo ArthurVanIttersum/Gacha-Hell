@@ -12,7 +12,7 @@ public class EnemyPlacer : MonoBehaviour
     protected float spawncooldownTime = 1f;
     public List<EnemyBase> allEnemies = null;
     public Waves waves;
-    public int currentWave = -1;
+    public int currentWave = 0;
     public bool autoStartActive;
     private int enemiesThisRound = 0;
     private int enemiesSpawned = 0;
@@ -35,36 +35,39 @@ public class EnemyPlacer : MonoBehaviour
     void Update()
     {
         RemoveDestroyedEnemies();
-        if (currentRoundState == roundState.Spawning)
+
+        switch (currentRoundState)
         {
-            if (enemiesThisRound == enemiesSpawned)
-            {
-                currentRoundState = roundState.Killing;
-            }
-        }
-        if (currentRoundState == roundState.Killing)
-        {
-            if (enemiesThisRound == enemiesKilled)
-            {
-                currentRoundState = roundState.Complete;
-            }
-        }
-        if (autoStartActive)
-        {
-            if (currentRoundState == roundState.Complete)
-            {
-                StartRound();
-            }
+            case roundState.Spawning:
+                if (enemiesThisRound == enemiesSpawned)
+                {
+                    currentRoundState = roundState.Killing;
+                }
+            break;
+
+            case roundState.Killing:
+                if (enemiesThisRound == enemiesKilled)
+                {
+                    currentRoundState = roundState.Complete;
+                }
+                break;
+
+            case roundState.Complete:
+                if (autoStartActive)
+                {
+                    StartRound();
+                }
+            break;
         }
     }
 
     private void StartRound()
     {
-        currentWave++;
-        if (currentWave == waves.theWaves.Length)
+        if (currentWave >= waves.theWaves.Length)
         {
             //victory
             //Dylan, in this if statement you can add code to move to the win scene
+            return; // to stop processing further code
         }
         for (int i = 0; i < waves.theWaves[currentWave].clumps.Length; i++)
         {
@@ -74,7 +77,9 @@ public class EnemyPlacer : MonoBehaviour
             //coroutines.Add(coroutine);
             print("Coroutine started");
         }
+
         currentRoundState = roundState.Spawning;
+        currentWave++;
     }
 
     private IEnumerator Spawner(EnemyClump enemyClump)
@@ -104,7 +109,6 @@ public class EnemyPlacer : MonoBehaviour
     {
         if (currentRoundState == roundState.Complete)
         {
-            
             StartRound();
         }
     }
