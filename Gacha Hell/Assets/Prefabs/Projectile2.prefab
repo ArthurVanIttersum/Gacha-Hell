@@ -146,4 +146,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c66e10a3dcc9f9744bd14174bbc8454b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+  percentageOfHealth: 0.8

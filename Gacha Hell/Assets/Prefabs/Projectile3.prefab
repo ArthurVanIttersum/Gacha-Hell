@@ -146,4 +146,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 339eb5ccd4edffb47820c39d885ae7ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
+  target: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
+  layerMask:
+    serializedVersion: 2
+    m_Bits: 64
+  explosivePierce: 10
+  explosiveRange: 3
