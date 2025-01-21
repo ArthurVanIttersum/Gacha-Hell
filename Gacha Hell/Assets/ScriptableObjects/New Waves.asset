@@ -15,12 +15,120 @@ MonoBehaviour:
   theWaves:
   - clumps:
     - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 1000
+      count: 0
       spawncooldown: 0.5
       startDelay: 0
     - enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 1000
+      count: 0
       spawncooldown: 1
+      startDelay: 0
+    - enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
+      count: 0
+      spawncooldown: 3
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 5
+      spawncooldown: 0.7
+      startDelay: 0
+    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 5
+      spawncooldown: 0.7
+      startDelay: 0.15
+    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 5
+      spawncooldown: 0.7
+      startDelay: 0.3
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+  - clumps:
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
+      startDelay: 0
+    - enemyType: {fileID: 0}
+      count: 0
+      spawncooldown: 0
       startDelay: 0
   - clumps:
     - enemyType: {fileID: 0}

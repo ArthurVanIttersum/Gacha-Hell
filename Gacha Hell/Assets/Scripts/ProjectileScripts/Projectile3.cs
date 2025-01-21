@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class Projectile1 : ProjectileBase
+public class Projectile3 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float movementSpeed { get { return 2f; } }
-    public override float damage { get { return 2; } }
+    protected override float movementSpeed { get { return 0.5f; } }
+    public override float damage { get { return 4; } }
     protected override void CalculatePath()
     {
         direction = targetPosition - startPosition;

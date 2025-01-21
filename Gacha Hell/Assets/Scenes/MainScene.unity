@@ -1678,7 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHealth: 1000
-  playerMoney: 100
+  playerMoney: 200
 --- !u!4 &601985217
 Transform:
   m_ObjectHideFlags: 0
@@ -1725,7 +1725,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerOptions:
   - {fileID: 7615513848399518607, guid: cf584fe948327344eaa89ddc1a39d7ed, type: 3}
-  - {fileID: 5005888044107630518, guid: 81b8cf6a706216b4d8dad1a088e11a61, type: 3}
+  - {fileID: 0}
   playerVariables: {fileID: 0}
   theTilemap: {fileID: 4455712922060109515}
   tileBase:

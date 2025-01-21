@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6976589935633777095}
   - component: {fileID: 3439840549856659088}
   - component: {fileID: 5852213464207679282}
-  - component: {fileID: 5005888044107630518}
+  - component: {fileID: 6209305214190678529}
   m_Layer: 0
   m_Name: Tower2
   m_TagString: Tower
@@ -136,7 +136,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &5005888044107630518
+--- !u!114 &6209305214190678529
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,13 +145,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1276430191304563754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7326a243a592aa04083158e67abe2230, type: 3}
+  m_Script: {fileID: 11500000, guid: be258fa8a82c6fd43a96c8f1d98b7c90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: 4190586311869857436, guid: 9783a5c2fee62b14cb8da3e3f4fb6056, type: 3}
-  PreferredEnemyName: Enemy2
+  projectile: {fileID: -8556816150442965533, guid: 03d2d5b1808b1504c9b2d27a2cc9328b, type: 3}
+  PreferredEnemyName: Enemy3
   enemiesInRange: []
-  currentTargeting: 3
+  preferredEnemy: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
+  currentTargeting: 0
 --- !u!1 &7814751911735496382
 GameObject:
   m_ObjectHideFlags: 0
