@@ -89,6 +89,7 @@ public class TowerPlacer : MonoBehaviour
 
             case "Tower3":
                 currentlySelectedTower = towerOptions[2];
+                ShowPreview();
             break;
 
             default:

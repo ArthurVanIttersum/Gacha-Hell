@@ -93,8 +93,8 @@ MonoBehaviour:
     - clumpName: Clump 4
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
       count: 15
-      spawncooldown: 1.5
-      startDelay: 1.5
+      spawncooldown: 0.7
+      startDelay: 1
   - waveName: Wave 7
     clumps:
     - clumpName: Clump 1

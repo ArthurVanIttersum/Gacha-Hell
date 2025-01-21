@@ -693,7 +693,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: 'Mage '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -827,7 +827,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Button
+  m_text: Cannon
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1880,7 +1880,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   towerOptions:
   - {fileID: 7615513848399518607, guid: cf584fe948327344eaa89ddc1a39d7ed, type: 3}
-  - {fileID: 0}
+  - {fileID: 6209305214190678529, guid: 81b8cf6a706216b4d8dad1a088e11a61, type: 3}
+  - {fileID: -2822001546167113073, guid: b8754100300a7e64aa08c0565d2bb582, type: 3}
   playerVariables: {fileID: 0}
   theTilemap: {fileID: 4455712922060109515}
   tileBase:
@@ -1965,7 +1966,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Tower1
+  m_text: 'Archer '
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2331,7 +2332,7 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: Tower2
+          m_StringArgument: Tower3
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!114 &1275320701
