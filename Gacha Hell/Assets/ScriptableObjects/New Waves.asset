@@ -13,38 +13,49 @@ MonoBehaviour:
   m_Name: New Waves
   m_EditorClassIdentifier: 
   theWaves:
-  - clumps:
-    - enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 1000
+  - waveName: Wave 1
+    clumps:
+    - clumpName: Clump 1
+      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 10
       spawncooldown: 0.5
       startDelay: 0
-    - enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 1000
+    - clumpName: Clump 2
+      enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
+      count: 10
       spawncooldown: 1
       startDelay: 0
-  - clumps:
-    - enemyType: {fileID: 0}
+  - waveName: Wave 2
+    clumps:
+    - clumpName: Clump 1
+      enemyType: {fileID: 0}
       count: 0
       spawncooldown: 0
       startDelay: 0
-    - enemyType: {fileID: 0}
+    - clumpName: Clump 2
+      enemyType: {fileID: 0}
       count: 0
       spawncooldown: 0
       startDelay: 0
-    - enemyType: {fileID: 0}
+    - clumpName: Clump 3
+      enemyType: {fileID: 0}
       count: 0
       spawncooldown: 0
       startDelay: 0
-  - clumps:
-    - enemyType: {fileID: 0}
+  - waveName: Wave 3
+    clumps:
+    - clumpName: Clump 1
+      enemyType: {fileID: 0}
       count: 0
       spawncooldown: 0
       startDelay: 0
-    - enemyType: {fileID: 0}
+    - clumpName: Clump 2
+      enemyType: {fileID: 0}
       count: 0
       spawncooldown: 0
       startDelay: 0
-    - enemyType: {fileID: 0}
+    - clumpName: Clump 3
+      enemyType: {fileID: 0}
       count: 0
       spawncooldown: 0
       startDelay: 0
