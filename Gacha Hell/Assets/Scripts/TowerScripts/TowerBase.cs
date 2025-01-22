@@ -13,9 +13,9 @@ public class TowerBase : MonoBehaviour
     protected virtual float shotCooldownTime { get { return 10000; } }
     protected virtual float range { get { return 100; } }
     public virtual int cost { get { return 0; } }
-    public string PreferredEnemyName = "Write down the name of the enemy that the tower prefers";
     
-    private bool towerIsShooting = true;
+    
+    
     private Transform towerRange;
     private Collider towerRangeCollider;
     public List<EnemyBase> enemiesInRange = null;
@@ -36,6 +36,7 @@ public class TowerBase : MonoBehaviour
         towerRangeCollider = towerRange.GetComponent<Collider>();
         StartShooting();
         SetRange();
+        
     }
 
     protected void StartShooting()
@@ -46,12 +47,24 @@ public class TowerBase : MonoBehaviour
 
     private IEnumerator Shooting(float waitTime)
     {
-        while (towerIsShooting)
+        while (true)
         {
-            Shoot();
-            yield return new WaitForSeconds(waitTime);
+            if (TestTowerActive())
+            {
+                Shoot();
+                yield return new WaitForSeconds(waitTime);
+            }
+            yield return null;
         }
     }
+
+    public bool TestTowerActive()
+    {
+        enemiesInRange.RemoveAll(item => item == null); // removes all null entries from the list
+        return (enemiesInRange.Count > 0);
+    }
+
+
 
     protected void SetRange()
     {
