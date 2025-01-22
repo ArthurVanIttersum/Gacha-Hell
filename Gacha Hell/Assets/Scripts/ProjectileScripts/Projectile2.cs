@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile2 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float movementSpeed { get { return 1.5f; } }
+    protected override float speed { get { return 1.5f; } }
     public override float damage { get { return 0; } }
     protected override int pierce { get { return 3; } }
     [Tooltip("0 = 0%, 0.5 = 50%, 1 = 100%")]
@@ -15,7 +15,7 @@ public class Projectile2 : ProjectileBase
     {
         direction = targetPosition - startPosition;
         direction.Normalize();
-        direction *= movementSpeed;
+        direction *= speed;
     }
 
     protected override void FollowPath()

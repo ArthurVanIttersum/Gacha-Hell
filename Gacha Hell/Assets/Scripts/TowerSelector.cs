@@ -8,7 +8,6 @@ using UnityEngine.Rendering;
 
 public class TowerSelector : MonoBehaviour
 {
-    private bool isTowerSelected = false;
     [SerializeField] private GameObject selectedTowerMenu;
     [SerializeField] private TextMeshProUGUI towerNameText;
     [SerializeField] private TextMeshProUGUI targetingMethodText;
@@ -91,7 +90,7 @@ public class TowerSelector : MonoBehaviour
         if (selectedTower != null)
         {
             Destroy(selectedTower);
-            playerVariables.playerMoney += (int)(selectedTower.GetComponent<TowerBase>().cost * sellValue); // Make into int so it works
+            playerVariables.playerMoney += (int)(selectedTower.GetComponent<TowerBase>().cost * sellValue); // Make into int so it works to do decimal values
             Vector3Int towerPosition = towerPlacer.theTilemap.WorldToCell(selectedTower.transform.position);
             towerPlacer.placedTowers.Remove(towerPosition); // Remove tower from dictionary
             RemoveMenu();
@@ -120,13 +119,11 @@ public class TowerSelector : MonoBehaviour
     private void ShowMenu()
     {
         selectedTowerMenu.SetActive(true);
-        isTowerSelected = true;
     }
 
     private void RemoveMenu()
     {
         selectedTowerMenu.SetActive(false);
-        isTowerSelected = false;
         selectedTower = null;
         previousSelectedTower = null;
     }

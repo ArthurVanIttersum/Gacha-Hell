@@ -2415,8 +2415,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ba00e6c253c766948893dea4f25025c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerHealth: 1000
-  playerMoney: 200
+  _playerHealth: 100
+  _playerMoney: 100
 --- !u!4 &601985217
 Transform:
   m_ObjectHideFlags: 0
@@ -2540,9 +2540,13 @@ MonoBehaviour:
   towerNameText: {fileID: 917914094}
   targetingMethodText: {fileID: 249481676}
   sellButton: {fileID: 1323192678}
+  targetingOptionText: {fileID: 249481676}
+  leftButton: {fileID: 831127717}
+  rightButton: {fileID: 1880311770}
   layerMask:
     serializedVersion: 2
     m_Bits: 256
+  sellValue: 0.5
 --- !u!1 &800113449
 GameObject:
   m_ObjectHideFlags: 0
@@ -2804,7 +2808,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 831127718}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 782561712}
+        m_TargetAssemblyTypeName: TowerSelector, Assembly-CSharp
+        m_MethodName: SwitchTargetingLeft
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &831127718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5265,7 +5281,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1880311771}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 782561712}
+        m_TargetAssemblyTypeName: TowerSelector, Assembly-CSharp
+        m_MethodName: SwitchTargetingRight
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1880311771
 MonoBehaviour:
   m_ObjectHideFlags: 0
