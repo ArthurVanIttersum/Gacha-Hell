@@ -24,6 +24,8 @@ public class HealthUI : MonoBehaviour
         {
             healthText.text = "Health: " + newHealth.ToString("F0");
         }
+
+        // TODO: add function to change HP bar fill amount
     }
 
     // --------- Event Subscriptions ---------

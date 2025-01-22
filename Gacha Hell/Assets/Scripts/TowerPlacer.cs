@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -21,7 +22,7 @@ public class TowerPlacer : MonoBehaviour
     private GameObject currentPreviewTowerRange;
 
     // A dictionary to keep track of the towers that have been placed
-    private Dictionary<Vector3Int, GameObject> placedTowers = new Dictionary<Vector3Int, GameObject>();
+    public Dictionary<Vector3Int, GameObject> placedTowers = new Dictionary<Vector3Int, GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -102,6 +103,7 @@ public class TowerPlacer : MonoBehaviour
         currentPreviewTowerRange = currentPreview.transform.Find("TowerRange").gameObject;
         currentPreviewTowerRange.GetComponentInChildren<MeshRenderer>().enabled = true;
         currentPreviewTowerRange.GetComponentInChildren<SphereCollider>().isTrigger = false; // To fix bug where tower preview can shoot enemies
+        currentPreview.tag = "TowerPreview"; // To fix bug where tower preview can be selected as actual placed tower
         ApplyPreviewMaterial(currentPreview);
 
         // Update the preview position
@@ -157,9 +159,8 @@ public class TowerPlacer : MonoBehaviour
         currentlySelectedTower = null;
     }
 
-
     // Apply the grayed-out material to all renderers in the preview object
-    private void ApplyPreviewMaterial(GameObject preview)
+    public void ApplyPreviewMaterial(GameObject preview)
     {
         foreach (Renderer renderer in preview.GetComponentsInChildren<Renderer>())
         {
