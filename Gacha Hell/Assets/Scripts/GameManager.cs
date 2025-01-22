@@ -26,10 +26,7 @@ public class GameManager : MonoBehaviour
             GameOver();
         }
 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            TogglePause();
-        }
+        
     }
 
     void GameOver()
@@ -38,7 +35,7 @@ public class GameManager : MonoBehaviour
     }
 
     
-    void TogglePause()
+    public void TogglePause()
     {
         isPaused = !isPaused;
 
