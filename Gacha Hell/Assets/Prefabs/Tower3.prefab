@@ -13,9 +13,9 @@ GameObject:
   - component: {fileID: 6976589935633777095}
   - component: {fileID: 3439840549856659088}
   - component: {fileID: 5852213464207679282}
-  - component: {fileID: 6209305214190678529}
-  m_Layer: 8
-  m_Name: Tower2
+  - component: {fileID: -2822001546167113073}
+  m_Layer: 0
+  m_Name: Tower3
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -136,7 +136,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6209305214190678529
+--- !u!114 &-2822001546167113073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -145,12 +145,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1276430191304563754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be258fa8a82c6fd43a96c8f1d98b7c90, type: 3}
+  m_Script: {fileID: 11500000, guid: bda0d14db64340a428bffb7608a60d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: -8556816150442965533, guid: 03d2d5b1808b1504c9b2d27a2cc9328b, type: 3}
+  projectile: {fileID: 7881707867329781612, guid: 2097a2175ca84f543ab90cc0fd6f2889, type: 3}
   enemiesInRange: []
-  preferredEnemy: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
+  preferredEnemy: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
   currentTargeting: 3
 --- !u!1 &7814751911735496382
 GameObject:
@@ -214,7 +214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 33862b16cee5e924ab37d70e9689dfbf, type: 2}
+  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -320,7 +320,7 @@ PrefabInstance:
     - target: {fileID: -264430861247414160, guid: 8a122352b9c5a3642918fe54adc96429, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a540f73c276c3384aa33b178b6022cdc, type: 2}
+      objectReference: {fileID: 2100000, guid: d96f7c05eefed7a40b2186b4ff02f4e0, type: 2}
     - target: {fileID: 919132149155446097, guid: 8a122352b9c5a3642918fe54adc96429, type: 3}
       propertyPath: m_Name
       value: mage_tower
@@ -328,7 +328,7 @@ PrefabInstance:
     - target: {fileID: 3566390031902043909, guid: 8a122352b9c5a3642918fe54adc96429, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a540f73c276c3384aa33b178b6022cdc, type: 2}
+      objectReference: {fileID: 2100000, guid: d96f7c05eefed7a40b2186b4ff02f4e0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

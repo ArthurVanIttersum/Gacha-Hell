@@ -12,7 +12,7 @@ public class EnemyBase : MonoBehaviour
     private PlayerVariables playerVariables;
 
     public virtual float speed { get { return 0.89f; } }
-    protected virtual float maxHealth { get { return 100f; } }
+    public virtual float maxHealth { get { return 100f; } }
     protected virtual int damage { get { return 10; } }
     protected virtual int money { get { return 10; } }
     public float health;
@@ -91,6 +91,8 @@ public class EnemyBase : MonoBehaviour
 
     public virtual void TakeDamage(float damageDealt)
     {
+        print("enemy is taking damage");
+        print(damageDealt);
         health -= damageDealt;
         if (health <= 0)
         {

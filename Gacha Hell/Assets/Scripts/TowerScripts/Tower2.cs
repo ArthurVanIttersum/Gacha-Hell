@@ -4,11 +4,11 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class Tower1 : TowerBase
+public class Tower2 : TowerBase
 {
-    protected override float shotCooldownTime { get { return 0.5f; } }
-    protected override float range { get { return 11; } }
-    public override int cost { get { return 40; } }
+    protected override float shotCooldownTime { get { return 1.5f; } }
+    protected override float range { get { return 8; } }
+    public override int cost { get { return 60; } }
     protected override void Shoot()
     {
         EnemyBase target = ChooseTarget();

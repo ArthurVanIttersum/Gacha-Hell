@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     }
 
     
-    void TogglePause()
+    public void TogglePause()
     {
         isPaused = !isPaused;
 
