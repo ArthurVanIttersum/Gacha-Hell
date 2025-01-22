@@ -18,13 +18,13 @@ MonoBehaviour:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
       count: 10
-      spawncooldown: 0.25
+      spawncooldown: 0.1
       startDelay: 0
     - clumpName: Clump 2
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 3
-      spawncooldown: 1
-      startDelay: 10
+      count: 5
+      spawncooldown: 0.1
+      startDelay: 0
   - waveName: Wave 2
     clumps:
     - clumpName: Clump 1

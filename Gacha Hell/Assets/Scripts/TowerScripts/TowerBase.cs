@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -5,6 +6,7 @@ using System.Linq.Expressions;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Splines;
+using System.Linq;
 
 public class TowerBase : MonoBehaviour
 {
@@ -61,7 +63,8 @@ public class TowerBase : MonoBehaviour
     public bool TestTowerActive()
     {
         enemiesInRange.RemoveAll(item => item == null); // removes all null entries from the list
-        return (enemiesInRange.Count > 0);
+        bool enoughEnemiesInRange = (enemiesInRange.Count > 0);
+        return enoughEnemiesInRange;
     }
 
 
@@ -135,6 +138,26 @@ public class TowerBase : MonoBehaviour
                 }
                 break;
             case TargetingOptions.Preferred:
+                Type type = preferredEnemy.GetType();
+                bool containsPreferedEnemy = enemiesInRange.Any(item => item.GetType() == type);
+                if (!containsPreferedEnemy)
+                {
+                    value = 0;
+                    for (int i = 0; i < enemiesInRange.Count; i++)
+                    {
+                        float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                        if (distance > value)
+                        {
+                            value = distance;
+                            lastBest = i;
+                        }
+                    }
+                    break;
+                }
+                else
+                {
+                    
+                }
                 List<EnemyBase> enemiesOfPreferredType = new List<EnemyBase>{};
                 for (int i = 0; i < enemiesInRange.Count; i++)
                 {
@@ -142,7 +165,6 @@ public class TowerBase : MonoBehaviour
                     {
                         enemiesOfPreferredType.Add(enemiesInRange[i]);
                     }
-                    
                 }
                 if (enemiesOfPreferredType == null || enemiesOfPreferredType.Count == 0)// make sure the list makes sense
                 {
