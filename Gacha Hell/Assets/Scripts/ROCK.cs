@@ -4,14 +4,23 @@ using UnityEngine.UI;
 public class ROCK : MonoBehaviour
 {
     public GameObject removeButton;
+    public int removeCost = 10;
     private static ROCK selectedRock;
     private Material originalMaterial;
     private Renderer rockRenderer;
+    private PlayerVariables playerVariables;
 
     void Start()
     {
         rockRenderer = GetComponent<Renderer>();
         removeButton?.SetActive(false);
+
+        playerVariables = FindObjectOfType<PlayerVariables>();
+
+        if(playerVariables == null )
+        {
+            Debug.Log("PlayerVariables script not found in the scene!");
+        }
     }
 
     void Update()
@@ -59,9 +68,23 @@ public class ROCK : MonoBehaviour
     {
         removeButton?.SetActive(true);
         removeButton.GetComponent<Button>().onClick.RemoveAllListeners();
-        removeButton.GetComponent<Button>().onClick.AddListener(RemoveSelectedRock);
+        removeButton.GetComponent<Button>().onClick.AddListener(TryRemoveRock);
     }
 
+    void TryRemoveRock()
+    {
+        if (playerVariables.playerMoney >= removeCost)
+        {
+            // Deduct currency and remove the rock
+            playerVariables.playerMoney -= removeCost;
+            RemoveSelectedRock();
+        }
+        else
+        {
+            Debug.Log("Not enough money to remove the rock!");
+         
+        }
+    }
     void RemoveSelectedRock()
     {
         gameObject.SetActive(false);
