@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Tilemaps;
@@ -14,12 +15,14 @@ public class TowerPlacer : MonoBehaviour
     private bool hoveringOverButton;
     public LayerMask layerMask;
 
-    public Material previewMaterial; // Grayed-out material
-    public Material previewMaterialRed; // Red material for invalid placement
-    private GameObject currentPreview; // The current preview object
+    public Material previewMaterial;
+    public Material previewMaterialRed;
+    private GameObject currentPreview;
+    private Coroutine previewCoroutine;
+    private GameObject currentPreviewTowerRange;
 
     // A dictionary to keep track of the towers that have been placed
-    private Dictionary<Vector3Int, GameObject> placedTowers = new Dictionary<Vector3Int, GameObject>();
+    public Dictionary<Vector3Int, GameObject> placedTowers = new Dictionary<Vector3Int, GameObject>();
 
     // Start is called before the first frame update
     void Start()
@@ -31,29 +34,16 @@ public class TowerPlacer : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void PlaceTower()
     {
-        if (Input.GetKeyDown(KeyCode.Mouse1))
+        if (currentlySelectedTower != null)
         {
-            ClearPreview();
-        }
-        if (currentlySelectedTower == null)
-        {
-            return;
-        }
-        if (hoveringOverButton)
-        {
-            return;
-        }
-        if (Input.GetKeyDown(KeyCode.Mouse0))
-        {
-            
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             Physics.Raycast(ray, out hit, 100f, layerMask);
             Vector3Int gridPosition = theTilemap.WorldToCell(hit.point);
 
+            // Checks tile is grass tile & player has enough money & there is no tower already placed there through dictionary
             if (theTilemap.GetTile(gridPosition) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost && !placedTowers.ContainsKey(gridPosition))
             {
                 // Instantiate the tower
@@ -65,11 +55,6 @@ public class TowerPlacer : MonoBehaviour
                 playerVariables.playerMoney -= currentlySelectedTower.cost;
                 ClearPreview();
             }
-        }
-
-        if (currentlySelectedTower != null)
-        {
-            UpdatePreviewPosition();
         }
     }
 
@@ -103,7 +88,7 @@ public class TowerPlacer : MonoBehaviour
         hoveringOverButton = newValue;
     }
 
-    // Preview code ------------
+    // --------- Preview functions ---------
 
     private void ShowPreview()
     {
@@ -115,35 +100,67 @@ public class TowerPlacer : MonoBehaviour
 
         currentPreview = Instantiate(currentlySelectedTower).gameObject;
         currentPreview.transform.position = new Vector3(0, 100, 0); // Move the preview higher up, off-screen to avoid appearing at grid 0,0
-        currentPreview.transform.Find("TowerRange").GetComponentInChildren<MeshRenderer>().enabled = true;
+        currentPreviewTowerRange = currentPreview.transform.Find("TowerRange").gameObject;
+        currentPreviewTowerRange.GetComponentInChildren<MeshRenderer>().enabled = true;
+        currentPreviewTowerRange.GetComponentInChildren<SphereCollider>().isTrigger = false; // To fix bug where tower preview can shoot enemies
+        currentPreview.tag = "TowerPreview"; // To fix bug where tower preview can be selected as actual placed tower
         ApplyPreviewMaterial(currentPreview);
+
+        // Update the preview position
+        UpdatePreviewPosition();
     }
 
     // Updates the preview position to snap to the grid under the mouse
     private void UpdatePreviewPosition()
     {
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        RaycastHit hit;
-
-        if (Physics.Raycast(ray, out hit, 100f, layerMask))
+        if (previewCoroutine == null)
         {
-            Vector3Int gridPosition = theTilemap.WorldToCell(hit.point);
-            currentPreview.transform.position = theTilemap.GetCellCenterWorld(gridPosition);
-
-            // Check if the tower can be placed at the current position
-            if (theTilemap.GetTile(gridPosition) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost && !placedTowers.ContainsKey(gridPosition))
-            {
-                ApplyPreviewMaterial(currentPreview);
-            }
-            else
-            {
-                ApplyPreviewMaterialRed(currentPreview);
-            }
+            previewCoroutine = StartCoroutine(ContinuousRaycastPreview());
         }
     }
 
+    private IEnumerator ContinuousRaycastPreview()
+    {
+        while (currentPreview != null)  // Continue while the preview is still active
+        {
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            RaycastHit hit;
+
+            if (Physics.Raycast(ray, out hit, 100f, layerMask))
+            {
+                Vector3Int gridPosition = theTilemap.WorldToCell(hit.point);
+                currentPreview.transform.position = theTilemap.GetCellCenterWorld(gridPosition);
+
+                // Check if the tower can be placed at the current position
+                if (theTilemap.GetTile(gridPosition) == tileBase[1] && playerVariables.playerMoney >= currentlySelectedTower.cost && !placedTowers.ContainsKey(gridPosition))
+                {
+                    ApplyPreviewMaterial(currentPreview);
+                }
+                else
+                {
+                    ApplyPreviewMaterialRed(currentPreview);
+                }
+            }
+
+            yield return null;
+        }        
+    }
+
+    public void ClearPreview()
+    {
+        if (currentPreview != null)
+        {
+            StopCoroutine(previewCoroutine); // Stop the continuous raycast
+            Destroy(currentPreview);
+            currentPreview = null;
+            previewCoroutine = null;
+        }
+
+        currentlySelectedTower = null;
+    }
+
     // Apply the grayed-out material to all renderers in the preview object
-    private void ApplyPreviewMaterial(GameObject preview)
+    public void ApplyPreviewMaterial(GameObject preview)
     {
         foreach (Renderer renderer in preview.GetComponentsInChildren<Renderer>())
         {
@@ -169,15 +186,18 @@ public class TowerPlacer : MonoBehaviour
         }
     }
 
-    // Remove the preview when done
-    public void ClearPreview()
+    // --------- Event Subscriptions ---------
+    void OnEnable()
     {
-        if (currentPreview != null)
-        {
-            Destroy(currentPreview);
-            currentPreview = null;
-        }
+        // Subscribe to the Mouse0 click event when enabled (e.g., when the object is active)
+        InputManager.OnMouseLeftClick += PlaceTower;
+        InputManager.OnMouseRightClick += ClearPreview;
+    }
 
-        currentlySelectedTower = null;
+    void OnDisable()
+    {
+        // Unsubscribe when the object is disabled to prevent memory leaks
+        InputManager.OnMouseLeftClick -= PlaceTower;
+        InputManager.OnMouseRightClick -= ClearPreview;
     }
 }

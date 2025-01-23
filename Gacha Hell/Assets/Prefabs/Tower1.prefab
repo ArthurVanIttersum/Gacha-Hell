@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 68001153641620184}
   - component: {fileID: 8338889824839043673}
   - component: {fileID: 7615513848399518607}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tower1
   m_TagString: Tower
   m_Icon: {fileID: 0}
@@ -149,7 +149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   projectile: {fileID: 4190586311869857436, guid: 9783a5c2fee62b14cb8da3e3f4fb6056, type: 3}
-  PreferredEnemyName: Enemy2
   enemiesInRange: []
   preferredEnemy: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
   currentTargeting: 0
@@ -215,7 +214,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 31321ba15b8f8eb4c954353edc038b1d, type: 2}
+  - {fileID: 2100000, guid: 33862b16cee5e924ab37d70e9689dfbf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

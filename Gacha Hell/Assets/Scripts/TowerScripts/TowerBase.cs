@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -5,6 +6,7 @@ using System.Linq.Expressions;
 using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Splines;
+using System.Linq;
 
 public class TowerBase : MonoBehaviour
 {
@@ -13,9 +15,9 @@ public class TowerBase : MonoBehaviour
     protected virtual float shotCooldownTime { get { return 10000; } }
     protected virtual float range { get { return 100; } }
     public virtual int cost { get { return 0; } }
-    public string PreferredEnemyName = "Write down the name of the enemy that the tower prefers";
     
-    private bool towerIsShooting = true;
+    
+    
     private Transform towerRange;
     private Collider towerRangeCollider;
     public List<EnemyBase> enemiesInRange = null;
@@ -36,6 +38,7 @@ public class TowerBase : MonoBehaviour
         towerRangeCollider = towerRange.GetComponent<Collider>();
         StartShooting();
         SetRange();
+        
     }
 
     protected void StartShooting()
@@ -46,12 +49,25 @@ public class TowerBase : MonoBehaviour
 
     private IEnumerator Shooting(float waitTime)
     {
-        while (towerIsShooting)
+        while (true)
         {
-            Shoot();
-            yield return new WaitForSeconds(waitTime);
+            if (TestTowerActive())
+            {
+                Shoot();
+                yield return new WaitForSeconds(waitTime);
+            }
+            yield return null;
         }
     }
+
+    public bool TestTowerActive()
+    {
+        enemiesInRange.RemoveAll(item => item == null); // removes all null entries from the list
+        bool enoughEnemiesInRange = (enemiesInRange.Count > 0);
+        return enoughEnemiesInRange;
+    }
+
+
 
     protected void SetRange()
     {
@@ -122,6 +138,26 @@ public class TowerBase : MonoBehaviour
                 }
                 break;
             case TargetingOptions.Preferred:
+                Type type = preferredEnemy.GetType();
+                bool containsPreferedEnemy = enemiesInRange.Any(item => item.GetType() == type);
+                if (!containsPreferedEnemy)
+                {
+                    value = 0;
+                    for (int i = 0; i < enemiesInRange.Count; i++)
+                    {
+                        float distance = enemiesInRange[i].GetComponent<SplineAnimate>().ElapsedTime * enemiesInRange[i].speed;
+                        if (distance > value)
+                        {
+                            value = distance;
+                            lastBest = i;
+                        }
+                    }
+                    break;
+                }
+                else
+                {
+                    
+                }
                 List<EnemyBase> enemiesOfPreferredType = new List<EnemyBase>{};
                 for (int i = 0; i < enemiesInRange.Count; i++)
                 {
@@ -129,7 +165,6 @@ public class TowerBase : MonoBehaviour
                     {
                         enemiesOfPreferredType.Add(enemiesInRange[i]);
                     }
-                    
                 }
                 if (enemiesOfPreferredType == null || enemiesOfPreferredType.Count == 0)// make sure the list makes sense
                 {

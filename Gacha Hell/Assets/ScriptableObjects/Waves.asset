@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf1e0257bcf20e54abdc3cc48647b2c2, type: 3}
-  m_Name: New Waves
+  m_Name: Waves
   m_EditorClassIdentifier: 
   theWaves:
   - waveName: Wave 1
@@ -18,13 +18,13 @@ MonoBehaviour:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
       count: 10
-      spawncooldown: 0.25
+      spawncooldown: 0.1
       startDelay: 0
     - clumpName: Clump 2
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 3
-      spawncooldown: 1
-      startDelay: 10
+      count: 5
+      spawncooldown: 0.1
+      startDelay: 0
   - waveName: Wave 2
     clumps:
     - clumpName: Clump 1

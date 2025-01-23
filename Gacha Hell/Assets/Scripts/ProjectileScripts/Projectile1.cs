@@ -6,13 +6,13 @@ using UnityEngine;
 public class Projectile1 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float movementSpeed { get { return 2f; } }
+    protected override float speed { get { return 2f; } }
     public override float damage { get { return 2; } }
     protected override void CalculatePath()
     {
         direction = targetPosition - startPosition;
         direction.Normalize();
-        direction *= movementSpeed;
+        direction *= speed;
     }
 
     protected override void FollowPath()

@@ -13,12 +13,6 @@ public class DisplayIntValue : MonoBehaviour
         m_Text.text = valueToDisplay.ToString();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     public void ChangeValue(int changeBy)
     {
         valueToDisplay += changeBy;

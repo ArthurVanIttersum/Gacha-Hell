@@ -9,14 +9,14 @@ using static UnityEngine.Rendering.DebugUI;
 public class Projectile3 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float movementSpeed { get { return 0.5f; } }
+    protected override float speed { get { return 0.5f; } }
     public override float damage { get { return 4; } }
     protected override int pierce { get { return 1; } }
     protected override void CalculatePath()
     {
         direction = targetPosition - startPosition;
         direction.Normalize();
-        direction *= movementSpeed;
+        direction *= speed;
     }
     public LayerMask layerMask;
     public int explosivePierce;
