@@ -22,7 +22,7 @@ public class WaveUI : MonoBehaviour
         // Update the text
         if (enemyPlacer != null && waveText != null)
         {
-            waveText.text = "Wave: " + enemyPlacer.currentWave.ToString("F0") + "/10"; // Show as an integer
+            waveText.text = "Wave: " + enemyPlacer.currentWave.ToString("F0"); // Show as an integer
         }
     }
 }
