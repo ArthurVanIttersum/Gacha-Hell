@@ -9,8 +9,11 @@ public class Projectile2 : ProjectileBase
     protected override float speed { get { return 1.5f; } }
     public override float damage { get { return 0; } }
     protected override int pierce { get { return 3; } }
-    [Tooltip("0 = 0%, 0.5 = 50%, 1 = 100%")]
-    public float percentageOfHealth;
+    
+    public float zergDamage = 2;
+    public float domgDamage = 6;
+    public float tankDamage = 15;
+
     protected override void CalculatePath()
     {
         direction = targetPosition - startPosition;
@@ -32,7 +35,20 @@ public class Projectile2 : ProjectileBase
                 pierced++;
                 print("projectile2 is getting triggered");
                 EnemyBase enemy = other.GetComponent<EnemyBase>();
-                enemy.TakeDamage(enemy.maxHealth * percentageOfHealth);
+                float currentDamage = 0;
+                if (enemy is Enemy1)
+                {
+                    currentDamage = zergDamage;
+                }
+                else if (enemy is Enemy2)
+                {
+                    currentDamage = domgDamage;
+                }
+                else if (enemy is Enemy3)
+                {
+                    currentDamage = tankDamage;
+                }
+                enemy.TakeDamage(currentDamage);
             }
             if (pierced == pierce)
             {
