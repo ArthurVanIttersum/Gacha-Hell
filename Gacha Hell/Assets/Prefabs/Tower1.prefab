@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 68001153641620184}
   - component: {fileID: 8338889824839043673}
   - component: {fileID: 7615513848399518607}
+  - component: {fileID: 6432395379398776345}
   m_Layer: 8
   m_Name: Tower1
   m_TagString: Tower
@@ -152,6 +153,18 @@ MonoBehaviour:
   enemiesInRange: []
   preferredEnemy: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
   currentTargeting: 0
+--- !u!210 &6432395379398776345
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645996510281916821}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 2
+  m_SortAtRoot: 0
 --- !u!1 &6274409183978733114
 GameObject:
   m_ObjectHideFlags: 0

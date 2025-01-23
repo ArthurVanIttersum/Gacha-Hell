@@ -152,3 +152,4 @@ MonoBehaviour:
     m_Bits: 64
   explosivePierce: 10
   explosiveRange: 3
+  explosion: {fileID: 3512848270898857398, guid: 25dd07f8524dfbe4db87a97185c5bc42, type: 3}

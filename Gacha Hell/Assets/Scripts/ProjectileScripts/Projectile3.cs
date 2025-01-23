@@ -1,7 +1,9 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.VisualScripting;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using static UnityEngine.Rendering.DebugUI;
@@ -21,6 +23,7 @@ public class Projectile3 : ProjectileBase
     public LayerMask layerMask;
     public int explosivePierce;
     public int explosiveRange;
+    public GameObject explosion;
     protected override void FollowPath()
     {
         transform.position += direction;
@@ -34,7 +37,7 @@ public class Projectile3 : ProjectileBase
             {
                 pierced++;
                 Collider[] colliders = Physics.OverlapSphere(transform.position, explosiveRange, layerMask);
-                //maybe add code to start a particle effect of an explosion here
+                Instantiate(explosion, transform.position, Quaternion.identity);
                 if (colliders == null || colliders.Length == 0)// make sure the list makes sense
                 {
                     return;
