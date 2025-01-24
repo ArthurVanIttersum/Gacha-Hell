@@ -2,10 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class HealthUI : MonoBehaviour
 {
-    public TextMeshProUGUI healthText; // Reference to the UI text
+    public Slider slider;
+    // public TextMeshProUGUI healthText; // Reference to the UI text
     private PlayerVariables playerVariables; // Reference to the PlayerVariables script
 
     void Awake() // Not in start since we want to subscribe to the event before it is called
@@ -20,9 +22,9 @@ public class HealthUI : MonoBehaviour
 
     void UpdateHealthText(int newHealth)
     {
-        if (healthText != null)
+        if (slider != null)
         {
-            healthText.text = "Health: " + newHealth.ToString("F0");
+            slider.value = newHealth;
         }
 
         // TODO: add function to change HP bar fill amount
