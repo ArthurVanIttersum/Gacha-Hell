@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{b8d3c02b-e017-450a-8187-6b771c337607}">
+		<property name="assetPath">
+			<value>magic-44027.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>24</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>4.7279999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84c4a04d-f8b4-42a5-a03a-f842723c4981}</destination>
+		</relationship>
+	</object>
+</objects>

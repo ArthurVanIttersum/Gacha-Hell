@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{13e264ec-a707-40cf-b79b-b25299ec8ce6}">
+		<property name="assetPath">
+			<value>metal-crunch-263638.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>0.52800000000000002</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84c4a04d-f8b4-42a5-a03a-f842723c4981}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -11,8 +11,8 @@ using static UnityEngine.Rendering.DebugUI;
 public class Projectile3 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float speed { get { return 0.5f; } }
-    public override float damage { get { return 4; } }
+    protected override float speed { get { return 1f; } }
+    public override float damage { get { return 5; } }
     protected override int pierce { get { return 1; } }
     protected override void CalculatePath()
     {

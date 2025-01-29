@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{61a4682d-32f2-43e8-83c7-7a62dd80d26e}">
+		<property name="assetPath">
+			<value>arrow-body-impact-146419.mp3</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.57599999999999996</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{84c4a04d-f8b4-42a5-a03a-f842723c4981}</destination>
+		</relationship>
+	</object>
+</objects>
