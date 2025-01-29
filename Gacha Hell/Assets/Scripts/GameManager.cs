@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,10 +9,19 @@ public class GameManager : MonoBehaviour
 
     void Awake() // Not in start since we want to subscribe to the event before it is called
     {
-        playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
-        if (playerVariables == null)
+        GameObject castle = GameObject.Find("Castle");
+        if (castle == null)
         {
-            Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+            Debug.LogError("Gameobject 'Castle' Does not exist!");
+            
+        }
+        else
+        {
+            playerVariables = castle.GetComponent<PlayerVariables>();
+            if (playerVariables == null)
+            {
+                Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+            }
         }
     }
 

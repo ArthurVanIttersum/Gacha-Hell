@@ -6,13 +6,14 @@ using UnityEngine;
 public class Projectile1 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float speed { get { return 2f; } }
+    protected override float speed { get { return 0.5f; } }
     public override float damage { get { return 2; } }
     protected override void CalculatePath()
     {
         direction = targetPosition - startPosition;
         direction.Normalize();
         direction *= speed;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     protected override void FollowPath()
