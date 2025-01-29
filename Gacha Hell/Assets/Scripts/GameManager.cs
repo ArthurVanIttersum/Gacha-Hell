@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     private PlayerVariables playerVariables; 
     [SerializeField] private TextMeshProUGUI PlayCycleText;
+    // private ButtonToggle buttonToggle;
 
     public enum GameState
     {
@@ -17,6 +18,7 @@ public class GameManager : MonoBehaviour
 
     void Awake() // Not in start since we want to subscribe to the event before it is called
     {
+        // buttonToggle = GameObject.Find("Start/Pause").GetComponent<ButtonToggle>();
         playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
         if (playerVariables == null)
         {
@@ -51,6 +53,7 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.Play;
                 Time.timeScale = 1;
                 PlayCycleText.text = " ►";
+                // buttonToggle.ToggleUIComponent();
                 break;
             case GameState.DoubleSpeed:
                 currentState = GameState.DoubleSpeed;
@@ -61,6 +64,7 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.Pause;
                 Time.timeScale = 0;
                 PlayCycleText.text = "||";
+                // buttonToggle.ToggleUIComponent();
                 break;
         }
     }
@@ -68,7 +72,6 @@ public class GameManager : MonoBehaviour
     public void SwitchGameStateButton()
     {
         currentState = (GameState)(((int)currentState + 1) % System.Enum.GetValues(typeof(GameState)).Length);
-        Debug.Log("Current state: " + currentState);
         ChooseGameState();
     }
 
@@ -104,6 +107,3 @@ public class GameManager : MonoBehaviour
         // InputManager.OnEscapeKeyPressed -= TogglePause;
     }
 }
-
-// ►2x
-// ||
