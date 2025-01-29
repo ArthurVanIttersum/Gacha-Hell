@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class Tower3 : TowerBase
@@ -16,6 +17,7 @@ public class Tower3 : TowerBase
         {
             ProjectileBase newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
             newProjectile.target = target;
+            RotateToTarget(target);
         }
         
     }

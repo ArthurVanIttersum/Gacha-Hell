@@ -7,6 +7,7 @@ using Unity.IO.LowLevel.Unsafe;
 using UnityEngine;
 using UnityEngine.Splines;
 using System.Linq;
+using TMPro;
 
 public class TowerBase : MonoBehaviour
 {
@@ -193,5 +194,11 @@ public class TowerBase : MonoBehaviour
     protected virtual void Shoot()
     {
         
+    }
+
+    protected void RotateToTarget(EnemyBase target)
+    {
+        Vector3 direction = target.transform.position - this.transform.position;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 }

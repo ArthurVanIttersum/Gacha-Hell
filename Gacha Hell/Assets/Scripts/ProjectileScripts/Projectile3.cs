@@ -19,6 +19,7 @@ public class Projectile3 : ProjectileBase
         direction = targetPosition - startPosition;
         direction.Normalize();
         direction *= speed;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
     public LayerMask layerMask;
     public int explosivePierce;
