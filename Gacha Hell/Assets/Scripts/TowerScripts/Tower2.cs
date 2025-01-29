@@ -8,7 +8,7 @@ public class Tower2 : TowerBase
 {
     protected override float shotCooldownTime { get { return 1.5f; } }
     protected override float range { get { return 8; } }
-    public override int cost { get { return 300; } }
+    public override int cost { get { return 250; } }
     protected override void Shoot()
     {
         EnemyBase target = ChooseTarget();

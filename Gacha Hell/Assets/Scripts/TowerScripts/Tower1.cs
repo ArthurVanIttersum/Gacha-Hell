@@ -11,7 +11,7 @@ public class Tower1 : TowerBase
 {
     protected override float shotCooldownTime { get { return 1f; } }
     protected override float range { get { return 11; } }
-    public override int cost { get { return 200; } }
+    public override int cost { get { return 100; } }
     private EnemyBase target1 = null;
     private EnemyBase target2 = null;
     private EnemyBase target3 = null;
