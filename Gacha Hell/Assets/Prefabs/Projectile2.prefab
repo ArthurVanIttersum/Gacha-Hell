@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 9137263508243290597}
   - component: {fileID: 2361439488366566198}
   - component: {fileID: -8556816150442965533}
+  - component: {fileID: 5820739809508685057}
+  - component: {fileID: 8388491033886547731}
   m_Layer: 7
   m_Name: Projectile2
   m_TagString: Projectile
@@ -148,7 +150,71 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-  percentageOfHealth: 0.8
+  zergDamage: 2
+  domgDamage: 6
+  tankDamage: 15
+--- !u!114 &5820739809508685057
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067550829540775271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 468107414
+      Data2: 1091204156
+      Data3: -1108795238
+      Data4: -600441506
+    Path: event:/Tower sounds/Magic Tower
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8388491033886547731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067550829540775271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 817499982
+      Data2: 1132030051
+      Data3: 1236182939
+      Data4: -1457081265
+    Path: event:/Projecile sounds/Maigc Hit
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &8151372383334352870
 GameObject:
   m_ObjectHideFlags: 0
