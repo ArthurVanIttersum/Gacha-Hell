@@ -1,10 +1,19 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
     private PlayerVariables playerVariables; 
-    private bool isPaused = false;
+    [SerializeField] private TextMeshProUGUI PlayCycleText;
+
+    public enum GameState
+    {
+        Play,
+        DoubleSpeed,
+        Pause,
+    }
+    public GameState currentState = GameState.Play;
 
     void Awake() // Not in start since we want to subscribe to the event before it is called
     {
@@ -13,6 +22,11 @@ public class GameManager : MonoBehaviour
         {
             Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
         }
+    }
+
+    void Start()
+    {
+        ChooseGameState();
     }
 
     void GameOverCheck(int newHealth)
@@ -29,19 +43,33 @@ public class GameManager : MonoBehaviour
     }
 
     
-    public void TogglePause()
+    public void ChooseGameState()
     {
-        isPaused = !isPaused;
+        switch (currentState)
+        {
+            case GameState.Play:
+                currentState = GameState.Play;
+                Time.timeScale = 1;
+                PlayCycleText.text = " ►";
+                break;
+            case GameState.DoubleSpeed:
+                currentState = GameState.DoubleSpeed;
+                Time.timeScale = 2;
+                PlayCycleText.text = "►2x";
+                break;
+            case GameState.Pause:
+                currentState = GameState.Pause;
+                Time.timeScale = 0;
+                PlayCycleText.text = "||";
+                break;
+        }
+    }
 
-        if (isPaused)
-        {
-            Time.timeScale = 0; 
-            
-        }
-        else
-        {
-            Time.timeScale = 1; 
-        }
+    public void SwitchGameStateButton()
+    {
+        currentState = (GameState)(((int)currentState + 1) % System.Enum.GetValues(typeof(GameState)).Length);
+        Debug.Log("Current state: " + currentState);
+        ChooseGameState();
     }
 
     public void GoToMainMenu()
@@ -63,7 +91,7 @@ public class GameManager : MonoBehaviour
             playerVariables.OnHealthChanged += GameOverCheck;
         }
         
-        InputManager.OnEscapeKeyPressed += TogglePause;
+        // InputManager.OnEscapeKeyPressed += TogglePause;
     }
 
     void OnDisable() // Unsubscribe from the event if the object is disabled
@@ -73,6 +101,9 @@ public class GameManager : MonoBehaviour
             playerVariables.OnHealthChanged -= GameOverCheck;
         }
 
-        InputManager.OnEscapeKeyPressed -= TogglePause;
+        // InputManager.OnEscapeKeyPressed -= TogglePause;
     }
 }
+
+// ►2x
+// ||
