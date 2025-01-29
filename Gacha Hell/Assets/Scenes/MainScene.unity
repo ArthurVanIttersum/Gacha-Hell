@@ -2888,7 +2888,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: abae865b98ff35b42b86944c363df358, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -19172,7 +19172,7 @@ TilemapRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5910485834972096241}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -19259,8 +19259,8 @@ SceneRoots:
   - {fileID: 1384092719}
   - {fileID: 3060474421899901874}
   - {fileID: 493884122}
+  - {fileID: 805669008}
   - {fileID: 1463075051}
   - {fileID: 1193042567}
   - {fileID: 1591807233}
   - {fileID: 1488086938}
-  - {fileID: 805669008}
