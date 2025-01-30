@@ -9,7 +9,7 @@ using UnityEngine;
 
 public class Tower1 : TowerBase
 {
-    protected override float shotCooldownTime { get { return 0.7f; } }
+    protected override float shotCooldownTime { get { return 0.9f; } }
     protected override float range { get { return 11; } }
     public override int cost { get { return 100; } }
     private EnemyBase target1 = null;

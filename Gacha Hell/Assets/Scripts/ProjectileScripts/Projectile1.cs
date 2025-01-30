@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile1 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float speed { get { return 2.5f; } }
+    protected override float speed { get { return 3f; } }
     public override float damage { get { return 2; } }
 
     public float zergDamage = 2;
