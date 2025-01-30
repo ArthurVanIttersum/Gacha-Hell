@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 
-public class Tower2 : TowerBase
+public class MageTower : TowerBase
 {
     protected override float shotCooldownTime { get { return 1.5f; } }
     protected override float range { get { return 8; } }

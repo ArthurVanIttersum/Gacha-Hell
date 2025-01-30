@@ -7,7 +7,8 @@ using UnityEngine;
 
 
 
-public class Tower1 : TowerBase
+public class ArcherTower: TowerBase
+
 {
     protected override float shotCooldownTime { get { return 1f; } }
     protected override float range { get { return 11; } }

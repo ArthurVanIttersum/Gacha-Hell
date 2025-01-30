@@ -13,11 +13,11 @@ GameObject:
   - component: {fileID: 6976589935633777095}
   - component: {fileID: 3439840549856659088}
   - component: {fileID: 5852213464207679282}
-  - component: {fileID: 6209305214190678529}
-  - component: {fileID: -4638992366899295167}
-  - component: {fileID: 2505684069767989795}
+  - component: {fileID: -2822001546167113073}
+  - component: {fileID: -1128181699943569770}
+  - component: {fileID: -8653115208183607242}
   m_Layer: 8
-  m_Name: Tower2
+  m_Name: CannonTower
   m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -38,7 +38,6 @@ Transform:
   m_Children:
   - {fileID: 5088350921388736897}
   - {fileID: 1301100361901690092}
-  - {fileID: 3382934512054563321}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &602357433098319433
@@ -139,7 +138,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6209305214190678529
+--- !u!114 &-2822001546167113073
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -148,14 +147,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 1276430191304563754}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: be258fa8a82c6fd43a96c8f1d98b7c90, type: 3}
+  m_Script: {fileID: 11500000, guid: bda0d14db64340a428bffb7608a60d85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  projectile: {fileID: -8556816150442965533, guid: 03d2d5b1808b1504c9b2d27a2cc9328b, type: 3}
+  projectile: {fileID: 7881707867329781612, guid: 2097a2175ca84f543ab90cc0fd6f2889, type: 3}
   enemiesInRange: []
-  preferredEnemy: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
+  preferredEnemy: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
   currentTargeting: 3
---- !u!210 &-4638992366899295167
+--- !u!210 &-1128181699943569770
 SortingGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -167,7 +166,7 @@ SortingGroup:
   m_SortingLayer: 0
   m_SortingOrder: 2
   m_SortAtRoot: 0
---- !u!114 &2505684069767989795
+--- !u!114 &-8653115208183607242
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -303,84 +302,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!1001 &2988174080979932690
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 7803313842944918106}
-    m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.12
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_Name
-      value: mage_tower (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
---- !u!4 &3382934512054563321 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 580337c94d652cd48937a2b1a0321764, type: 3}
-  m_PrefabInstance: {fileID: 2988174080979932690}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4690443251811165802
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -444,7 +365,7 @@ PrefabInstance:
     - target: {fileID: -264430861247414160, guid: 8a122352b9c5a3642918fe54adc96429, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a540f73c276c3384aa33b178b6022cdc, type: 2}
+      objectReference: {fileID: 2100000, guid: d96f7c05eefed7a40b2186b4ff02f4e0, type: 2}
     - target: {fileID: 919132149155446097, guid: 8a122352b9c5a3642918fe54adc96429, type: 3}
       propertyPath: m_Name
       value: mage_tower
@@ -452,7 +373,7 @@ PrefabInstance:
     - target: {fileID: 3566390031902043909, guid: 8a122352b9c5a3642918fe54adc96429, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a540f73c276c3384aa33b178b6022cdc, type: 2}
+      objectReference: {fileID: 2100000, guid: d96f7c05eefed7a40b2186b4ff02f4e0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
