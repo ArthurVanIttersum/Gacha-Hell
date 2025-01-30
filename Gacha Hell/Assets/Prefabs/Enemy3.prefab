@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 9117019810350318748}
   - component: {fileID: 6280834226085964217}
   - component: {fileID: 1251050723034809740}
+  - component: {fileID: -6331181688250508296}
   m_Layer: 6
   m_Name: Enemy3
   m_TagString: Enemy
@@ -94,6 +95,37 @@ CapsuleCollider:
   m_Height: 1.6758343
   m_Direction: 1
   m_Center: {x: 4.2520889e-19, y: 0.8817126, z: 0.00045835972}
+--- !u!114 &-6331181688250508296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9187471765702057610}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1028692814
+      Data2: 1138889490
+      Data3: -1485420397
+      Data4: -1628727238
+    Path: event:/Enemy sounds/Rhino death
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &6680990097971860253
 PrefabInstance:
   m_ObjectHideFlags: 0

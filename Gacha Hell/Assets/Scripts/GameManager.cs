@@ -26,14 +26,14 @@ public class GameManager : MonoBehaviour
             Debug.LogError("Gameobject 'Castle' Does not exist!");
             
         }
-        else
-        {
-            playerVariables = castle.GetComponent<PlayerVariables>();
-            if (playerVariables == null)
-            {
-                Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
-            }
-        }
+        //else
+        //{
+        //    playerVariables = castle.GetComponent<PlayerVariables>();
+        //    if (playerVariables == null)
+        //    {
+        //        Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+        //    }
+        //}
     }
 
     void Start()
