@@ -2802,7 +2802,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _playerHealth: 100
-  _playerMoney: 200
+  _playerMoney: 250
 --- !u!4 &601985217
 Transform:
   m_ObjectHideFlags: 0
@@ -3961,7 +3961,6 @@ RectTransform:
   m_Children:
   - {fileID: 2040273633}
   - {fileID: 1255410788}
-  - {fileID: 802450544}
   m_Father: {fileID: 572595073}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -7055,7 +7054,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1847339097}
   m_CullTransparentMesh: 1
---- !u!1 &1880311768
 --- !u!1001 &1873021924
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7118,6 +7116,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 9615d6dc97d669d43894c0a0bb9e0d8e, type: 3}
   m_PrefabInstance: {fileID: 1873021924}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1880311768
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -7127,16 +7126,16 @@ GameObject:
   m_Component:
   - component: {fileID: 1880311769}
   - component: {fileID: 1880311772}
-  - component: {fileID: 1880311771}
   - component: {fileID: 1880311770}
+  - component: {fileID: 1880311771}
   - component: {fileID: 1880311773}
-  m_Layer: 5
-  m_Name: RightTargeting
+  m_Layer: 0
+  m_Name: 
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1880311769
 RectTransform:
   m_ObjectHideFlags: 0
