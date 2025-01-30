@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
@@ -22,7 +23,16 @@ public class GameManager : MonoBehaviour
         playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
         if (playerVariables == null)
         {
-            Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+            Debug.LogError("Gameobject 'Castle' Does not exist!");
+            
+        }
+        else
+        {
+            playerVariables = castle.GetComponent<PlayerVariables>();
+            if (playerVariables == null)
+            {
+                Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
+            }
         }
     }
 

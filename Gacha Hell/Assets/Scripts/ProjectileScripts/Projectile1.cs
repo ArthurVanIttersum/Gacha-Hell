@@ -13,6 +13,7 @@ public class Projectile1 : ProjectileBase
         direction = targetPosition - startPosition;
         direction.Normalize();
         direction *= speed;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     protected override void FollowPath()
