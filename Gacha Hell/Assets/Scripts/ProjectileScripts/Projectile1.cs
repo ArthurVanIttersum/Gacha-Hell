@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile1 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float speed { get { return 0.5f; } }
+    protected override float speed { get { return 2.5f; } }
     public override float damage { get { return 2; } }
     protected override void CalculatePath()
     {

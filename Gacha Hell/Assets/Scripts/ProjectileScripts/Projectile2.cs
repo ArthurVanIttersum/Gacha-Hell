@@ -11,7 +11,7 @@ public class Projectile2 : ProjectileBase
     protected override int pierce { get { return 3; } }
     
     public float zergDamage = 2;
-    public float domgDamage = 6;
+    public float domgDamage = 4;
     public float tankDamage = 15;
 
     protected override void CalculatePath()

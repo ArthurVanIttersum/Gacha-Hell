@@ -1,0 +1,401 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-4519973163668604075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Button Press
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Button Press
+  Guid:
+    Data1: 1234118275
+    Data2: 1147337477
+    Data3: 122542757
+    Data4: 507035092
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 110
+--- !u!114 &-3078428570247832879
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 638737020304486852
+  FileSizes:
+  - Name: Desktop
+    Value: 1330
+  Exists: 1
+--- !u!114 &-1587798387822983421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Tower Buy
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Tower Buy
+  Guid:
+    Data1: -1220094493
+    Data2: 1147556995
+    Data3: 1474859178
+    Data4: -2147255160
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 820
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
+  m_Name: FMODStudioCache
+  m_EditorClassIdentifier: 
+  EditorBanks:
+  - {fileID: -3078428570247832879}
+  - {fileID: 8545099074702927437}
+  EditorEvents:
+  - {fileID: 1341017330940120429}
+  - {fileID: 1632096837998734409}
+  - {fileID: 6325877255479405390}
+  - {fileID: 3133903249648239290}
+  - {fileID: 2372280784600479202}
+  - {fileID: -4519973163668604075}
+  - {fileID: 3425607032037044527}
+  - {fileID: 935733831592008934}
+  - {fileID: 7477894255834173165}
+  - {fileID: 158509939892049146}
+  - {fileID: 3391837930550931950}
+  - {fileID: -1587798387822983421}
+  EditorParameters: []
+  MasterBanks:
+  - {fileID: 8545099074702927437}
+  StringsBanks:
+  - {fileID: -3078428570247832879}
+  cacheTime: 638737020304486852
+  cacheVersion: 131622
+--- !u!114 &158509939892049146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy sounds/Domg death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy sounds/Domg death
+  Guid:
+    Data1: -1759752530
+    Data2: 1204596609
+    Data3: -975836773
+    Data4: 994164230
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 700
+--- !u!114 &935733831592008934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tower sounds/Magic Tower
+  m_EditorClassIdentifier: 
+  Path: event:/Tower sounds/Magic Tower
+  Guid:
+    Data1: 468107414
+    Data2: 1091204156
+    Data3: -1108795238
+    Data4: -600441506
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 425
+--- !u!114 &1341017330940120429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projecile sounds/Arrow Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Projecile sounds/Arrow Hit
+  Guid:
+    Data1: 46385422
+    Data2: 1200593367
+    Data3: 1525368235
+    Data4: -271665497
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 290
+--- !u!114 &1632096837998734409
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tower sounds/Archer Tower
+  m_EditorClassIdentifier: 
+  Path: event:/Tower sounds/Archer Tower
+  Guid:
+    Data1: 1662822210
+    Data2: 1333708235
+    Data3: -320419144
+    Data4: -1039330125
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 190
+--- !u!114 &2372280784600479202
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/UI/Button Hover
+  m_EditorClassIdentifier: 
+  Path: event:/UI/Button Hover
+  Guid:
+    Data1: -1925349513
+    Data2: 1182234563
+    Data3: -606482248
+    Data4: -118035536
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 310
+--- !u!114 &3133903249648239290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projecile sounds/Cannon Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Projecile sounds/Cannon Hit
+  Guid:
+    Data1: 1925145965
+    Data2: 1218548405
+    Data3: 7213454
+    Data4: -434932106
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 412
+--- !u!114 &3391837930550931950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy sounds/Rhino death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy sounds/Rhino death
+  Guid:
+    Data1: -1028692814
+    Data2: 1138889490
+    Data3: -1485420397
+    Data4: -1628727238
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 633
+--- !u!114 &3425607032037044527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Tower sounds/Cannon Tower
+  m_EditorClassIdentifier: 
+  Path: event:/Tower sounds/Cannon Tower
+  Guid:
+    Data1: -957115512
+    Data2: 1260949386
+    Data3: 352782775
+    Data4: 1797738579
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 720
+--- !u!114 &6325877255479405390
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Projecile sounds/Maigc Hit
+  m_EditorClassIdentifier: 
+  Path: event:/Projecile sounds/Maigc Hit
+  Guid:
+    Data1: 817499982
+    Data2: 1132030051
+    Data3: 1236182939
+    Data4: -1457081265
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 570
+--- !u!114 &7477894255834173165
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Enemy sounds/Goblin death
+  m_EditorClassIdentifier: 
+  Path: event:/Enemy sounds/Goblin death
+  Guid:
+    Data1: 1637862829
+    Data2: 1170582183
+    Data3: -1581373542
+    Data4: -358336880
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 360
+--- !u!114 &8545099074702927437
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: Assets/FMOD/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 638737020304476850
+  FileSizes:
+  - Name: Desktop
+    Value: 700576
+  Exists: 1
