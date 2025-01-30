@@ -21,4 +21,12 @@ public class Tower3 : TowerBase
         }
         
     }
+
+    protected override void RotateToTarget(EnemyBase target)
+    {
+        Vector3 direction = target.transform.position - transform.position;
+
+        transform.Find("cannon_tower").transform.rotation = Quaternion.LookRotation(direction);
+
+    }
 }

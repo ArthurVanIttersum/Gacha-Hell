@@ -19,9 +19,9 @@ public class GameManager : MonoBehaviour
 
     void Awake() // Not in start since we want to subscribe to the event before it is called
     {
-        // buttonToggle = GameObject.Find("SpeedUp").GetComponent<ButtonToggle>();
-        playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
-        if (playerVariables == null)
+        // buttonToggle = GameObject.Find("Start/Pause").GetComponent<ButtonToggle>();
+        GameObject castle = GameObject.Find("Castle");
+        if (castle == null)
         {
             Debug.LogError("Gameobject 'Castle' Does not exist!");
             

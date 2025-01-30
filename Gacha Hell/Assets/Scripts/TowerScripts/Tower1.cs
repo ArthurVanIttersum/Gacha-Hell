@@ -92,5 +92,13 @@ public class Tower1 : TowerBase
         yield break;
     }
 
-    
+    protected override void RotateToTarget(EnemyBase target)
+    {
+        Vector3 direction = target.transform.position - transform.position;
+
+        transform.Find("archer_tower").transform.rotation = Quaternion.LookRotation(direction);
+
+    }
+
+
 }
