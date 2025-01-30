@@ -73,6 +73,7 @@ public class ArcherTower: TowerBase
         ProjectileBase newProjectile;
         newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
         newProjectile.target = target1;
+        RotateToTarget(target1);
         yield return new WaitForSeconds(0.1f);
         if (target2 == null)
         {
@@ -80,6 +81,7 @@ public class ArcherTower: TowerBase
         }
         newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
         newProjectile.target = target2;
+        RotateToTarget(target2);
         yield return new WaitForSeconds(0.1f);
         if (target3 == null)
         {
@@ -87,6 +89,17 @@ public class ArcherTower: TowerBase
         }
         newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
         newProjectile.target = target3;
+        RotateToTarget(target3);
         yield break;
     }
+
+    protected override void RotateToTarget(EnemyBase target)
+    {
+        Vector3 direction = target.transform.position - transform.position;
+
+        transform.Find("archer_tower").transform.rotation = Quaternion.LookRotation(direction);
+
+    }
+
+
 }

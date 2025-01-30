@@ -9,13 +9,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8161947439849236201}
-  - component: {fileID: 8425607385090890257}
-  - component: {fileID: 8981202253168978574}
   - component: {fileID: 9137263508243290597}
   - component: {fileID: 2361439488366566198}
   - component: {fileID: 7881707867329781612}
-  - component: {fileID: 6610616535676513826}
-  - component: {fileID: 8084500477658302482}
   m_Layer: 7
   m_Name: Projectile3
   m_TagString: Projectile
@@ -32,62 +28,13 @@ Transform:
   m_GameObject: {fileID: 2067550829540775271}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1230361, y: 1.9923426, z: 1.1565866}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 3842195186681706881}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!33 &8425607385090890257
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067550829540775271}
-  m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &8981202253168978574
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067550829540775271}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 409acdbb66349354783bd789b566f59d, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!135 &9137263508243290597
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -107,8 +54,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Radius: 0.1447292
+  m_Center: {x: 0, y: 0, z: -0.000020802021}
 --- !u!54 &2361439488366566198
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -155,65 +102,65 @@ MonoBehaviour:
   explosivePierce: 10
   explosiveRange: 3
   explosion: {fileID: 3512848270898857398, guid: 25dd07f8524dfbe4db87a97185c5bc42, type: 3}
---- !u!114 &6610616535676513826
-MonoBehaviour:
+--- !u!1001 &589472672527412295
+PrefabInstance:
   m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 8161947439849236201}
+    m_Modifications:
+    - target: {fileID: 3906822936788160380, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_Name
+      value: bomb_lowpoly_collider
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+--- !u!4 &3842195186681706881 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4430418811760088518, guid: 2fbb5ee077a94415aabfc4049ebbf921, type: 3}
+  m_PrefabInstance: {fileID: 589472672527412295}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067550829540775271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: -957115512
-      Data2: 1260949386
-      Data3: 352782775
-      Data4: 1797738579
-    Path: event:/Tower sounds/Cannon Tower
-  Event: 
-  EventPlayTrigger: 1
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
---- !u!114 &8084500477658302482
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2067550829540775271}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1925145965
-      Data2: 1218548405
-      Data3: 7213454
-      Data4: -434932106
-    Path: event:/Projecile sounds/Cannon Hit
-  Event: 
-  EventPlayTrigger: 2
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20

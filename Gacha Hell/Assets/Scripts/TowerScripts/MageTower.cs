@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEngine.GraphicsBuffer;
 
 
 public class MageTower : TowerBase
@@ -16,7 +17,16 @@ public class MageTower : TowerBase
         {
             ProjectileBase newProjectile = Instantiate(projectile, transform.position, Quaternion.identity, transform);
             newProjectile.target = target;
+            RotateToTarget(target);
         }
         
+    }
+
+    protected override void RotateToTarget(EnemyBase target)
+    {
+        Vector3 direction = target.transform.position - transform.position;
+
+        transform.Find("mage_tower").transform.rotation = Quaternion.LookRotation(direction);
+
     }
 }

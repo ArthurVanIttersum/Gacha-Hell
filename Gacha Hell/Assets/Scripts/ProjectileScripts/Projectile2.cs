@@ -6,7 +6,7 @@ using UnityEngine;
 public class Projectile2 : ProjectileBase
 {
     private Vector3 direction;
-    protected override float speed { get { return 1.5f; } }
+    protected override float speed { get { return 0.15f; } }
     public override float damage { get { return 0; } }
     protected override int pierce { get { return 3; } }
     
@@ -19,6 +19,7 @@ public class Projectile2 : ProjectileBase
         direction = targetPosition - startPosition;
         direction.Normalize();
         direction *= speed;
+        transform.rotation = Quaternion.LookRotation(direction);
     }
 
     protected override void FollowPath()
