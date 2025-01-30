@@ -5,11 +5,11 @@ using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
 
-public class Tower2 : TowerBase
+public class CannonTower : TowerBase
 {
-    protected override float shotCooldownTime { get { return 1.5f; } }
-    protected override float range { get { return 8; } }
-    public override int cost { get { return 250; } }
+    protected override float shotCooldownTime { get { return 2f; } }
+    protected override float range { get { return 7; } }
+    public override int cost { get { return 300; } }
     protected override void Shoot()
     {
         EnemyBase target = ChooseTarget();
@@ -26,7 +26,7 @@ public class Tower2 : TowerBase
     {
         Vector3 direction = target.transform.position - transform.position;
 
-        transform.Find("mage_tower").transform.rotation = Quaternion.LookRotation(direction);
+        transform.Find("cannon_tower").transform.rotation = Quaternion.LookRotation(direction);
 
     }
 }

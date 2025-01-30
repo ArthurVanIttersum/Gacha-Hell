@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     private PlayerVariables playerVariables; 
     [SerializeField] private TextMeshProUGUI PlayCycleText;
+    public bool isPaused = false;
     // private ButtonToggle buttonToggle;
 
     public enum GameState
@@ -19,21 +20,12 @@ public class GameManager : MonoBehaviour
 
     void Awake() // Not in start since we want to subscribe to the event before it is called
     {
-        // buttonToggle = GameObject.Find("Start/Pause").GetComponent<ButtonToggle>();
-        GameObject castle = GameObject.Find("Castle");
-        if (castle == null)
+        // buttonToggle = GameObject.Find("SpeedUp").GetComponent<ButtonToggle>();
+        playerVariables = GameObject.Find("Castle").GetComponent<PlayerVariables>();
+        if (playerVariables == null)
         {
-            Debug.LogError("Gameobject 'Castle' Does not exist!");
-            
+            Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
         }
-        //else
-        //{
-        //    playerVariables = castle.GetComponent<PlayerVariables>();
-        //    if (playerVariables == null)
-        //    {
-        //        Debug.LogError("No variables found on the 'Castle' GameObject! Please make a 'Castle' GameObject with the PlayerVariables script attached to it.");
-        //    }
-        //}
     }
 
     void Start()
@@ -63,26 +55,53 @@ public class GameManager : MonoBehaviour
                 currentState = GameState.Play;
                 Time.timeScale = 1;
                 PlayCycleText.text = " ►";
+                isPaused = false;
                 // buttonToggle.ToggleUIComponent();
                 break;
             case GameState.DoubleSpeed:
                 currentState = GameState.DoubleSpeed;
                 Time.timeScale = 2;
                 PlayCycleText.text = "►2x";
+                isPaused = false;
                 break;
             case GameState.Pause:
                 currentState = GameState.Pause;
                 Time.timeScale = 0;
                 PlayCycleText.text = "||";
+                isPaused = true;
                 // buttonToggle.ToggleUIComponent();
                 break;
         }
     }
 
+    public void PauseGame()
+    {
+        
+        if (!isPaused)
+        {
+            currentState = GameState.Pause;
+            ChooseGameState();
+        }
+        else
+        {
+            currentState = GameState.Play;
+            ChooseGameState();
+        }
+    }
+
     public void SwitchGameStateButton()
     {
-        currentState = (GameState)(((int)currentState + 1) % System.Enum.GetValues(typeof(GameState)).Length);
-        ChooseGameState();
+        //currentState = (GameState)(((int)currentState + 1) % System.Enum.GetValues(typeof(GameState)).Length);
+        if (currentState==GameState.DoubleSpeed)
+        {
+            currentState = GameState.Play;
+            ChooseGameState(); 
+        }
+        else
+        {
+            currentState = GameState.DoubleSpeed;
+            ChooseGameState();
+        }
     }
 
     public void GoToMainMenu()
