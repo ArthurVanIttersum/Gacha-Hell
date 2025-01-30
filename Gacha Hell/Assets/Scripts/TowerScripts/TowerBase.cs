@@ -196,9 +196,8 @@ public class TowerBase : MonoBehaviour
         
     }
 
-    protected void RotateToTarget(EnemyBase target)
+    protected virtual void RotateToTarget(EnemyBase target)
     {
-        Vector3 direction = target.transform.position - this.transform.position;
-        transform.rotation = Quaternion.LookRotation(direction);
+        
     }
 }

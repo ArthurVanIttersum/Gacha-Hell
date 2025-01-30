@@ -323,6 +323,38 @@ PrefabInstance:
       propertyPath: m_Name
       value: cannon_tower
       objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7068548
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0.018873876
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0.7068548
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.018873876
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -3.059
+      objectReference: {fileID: 0}
+    - target: {fileID: 2974637336586596102, guid: 70f6ba9c48672984b9bcbb063b94ea15, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -90
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
