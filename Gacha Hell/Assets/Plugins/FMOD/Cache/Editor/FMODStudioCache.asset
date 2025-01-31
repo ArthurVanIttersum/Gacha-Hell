@@ -42,10 +42,10 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638738371000699988
+  lastModified: 638738774751217135
   FileSizes:
   - Name: Desktop
-    Value: 1330
+    Value: 1422
   Exists: 1
 --- !u!114 &-1587798387822983421
 MonoBehaviour:
@@ -102,12 +102,14 @@ MonoBehaviour:
   - {fileID: 158509939892049146}
   - {fileID: 3391837930550931950}
   - {fileID: -1587798387822983421}
+  - {fileID: 5525930113711306134}
+  - {fileID: 6225118844830918576}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8545099074702927437}
   StringsBanks:
   - {fileID: -3078428570247832879}
-  cacheTime: 638738371000699988
+  cacheTime: 638738774751217135
   cacheVersion: 131622
 --- !u!114 &158509939892049146
 MonoBehaviour:
@@ -325,6 +327,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 720
+--- !u!114 &5525930113711306134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Background/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Background/Music
+  Guid:
+    Data1: -1093494426
+    Data2: 1110478606
+    Data3: -2024846660
+    Data4: 717370058
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 107209
+--- !u!114 &6225118844830918576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Background/Music 2
+  m_EditorClassIdentifier: 
+  Path: event:/Background/Music 2
+  Guid:
+    Data1: 1607213776
+    Data2: 1151448625
+    Data3: -831614276
+    Data4: -167869442
+  Banks:
+  - {fileID: 8545099074702927437}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 94000
 --- !u!114 &6325877255479405390
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -394,8 +450,8 @@ MonoBehaviour:
   Path: Assets/FMOD/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638738371000669940
+  lastModified: 638738774751197154
   FileSizes:
   - Name: Desktop
-    Value: 700576
+    Value: 2394816
   Exists: 1
