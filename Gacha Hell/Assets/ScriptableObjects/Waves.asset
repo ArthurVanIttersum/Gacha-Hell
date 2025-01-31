@@ -17,77 +17,65 @@ MonoBehaviour:
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 0
-      spawncooldown: 0.1
+      count: 5
+      spawncooldown: 0.7
       startDelay: 0
     - clumpName: Clump 2
-      enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 0
-      spawncooldown: 0.1
-      startDelay: 0
+      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 5
+      spawncooldown: 0.7
+      startDelay: 0.15
+    - clumpName: Clump 3
+      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 5
+      spawncooldown: 0.7
+      startDelay: 0.3
   - waveName: Wave 2
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 5
-      spawncooldown: 0.7
+      count: 10
+      spawncooldown: 1
       startDelay: 0
     - clumpName: Clump 2
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 5
-      spawncooldown: 0.7
+      count: 10
+      spawncooldown: 1
       startDelay: 0.15
     - clumpName: Clump 3
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 5
-      spawncooldown: 0.7
+      count: 10
+      spawncooldown: 1
       startDelay: 0.3
   - waveName: Wave 3
-    clumps:
-    - clumpName: Clump 1
-      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 10
-      spawncooldown: 1
-      startDelay: 0
-    - clumpName: Clump 2
-      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 10
-      spawncooldown: 1
-      startDelay: 0.15
-    - clumpName: Clump 3
-      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 10
-      spawncooldown: 1
-      startDelay: 0.3
-  - waveName: Wave 4
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
       count: 15
       spawncooldown: 0.7
       startDelay: 0
-  - waveName: Wave 5
+  - waveName: Wave 4
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
       count: 30
       spawncooldown: 0.4
       startDelay: 0
-  - waveName: Wave 6
+  - waveName: Wave 5
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 5
+      count: 7
       spawncooldown: 1
       startDelay: 1
     - clumpName: Clump 2
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 5
+      count: 7
       spawncooldown: 1
       startDelay: 1.15
     - clumpName: Clump 3
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 5
+      count: 7
       spawncooldown: 1
       startDelay: 1.3
     - clumpName: Clump 4
@@ -95,14 +83,14 @@ MonoBehaviour:
       count: 15
       spawncooldown: 0.7
       startDelay: 1
-  - waveName: Wave 7
+  - waveName: Wave 6
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
-      count: 5
+      count: 10
       spawncooldown: 2
       startDelay: 0
-  - waveName: Wave 8
+  - waveName: Wave 7
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
@@ -121,72 +109,72 @@ MonoBehaviour:
       startDelay: 1.8
     - clumpName: Clump 4
       enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
-      count: 5
+      count: 12
       spawncooldown: 2
       startDelay: 0
-  - waveName: Wave 9
+  - waveName: Wave 8
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 25
+      count: 30
       spawncooldown: 0.5
       startDelay: 1
     - clumpName: Clump 2
       enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
-      count: 10
+      count: 15
       spawncooldown: 1.5
+      startDelay: 0
+  - waveName: Wave 9
+    clumps:
+    - clumpName: Clump 1
+      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 12
+      spawncooldown: 1
+      startDelay: 3
+    - clumpName: Clump 2
+      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 12
+      spawncooldown: 1
+      startDelay: 3.15
+    - clumpName: Clump 3
+      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
+      count: 12
+      spawncooldown: 1
+      startDelay: 3.3
+    - clumpName: Clump 4
+      enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
+      count: 25
+      spawncooldown: 0.7
+      startDelay: 5
+    - clumpName: Clump 5
+      enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
+      count: 12
+      spawncooldown: 0.5
       startDelay: 0
   - waveName: Wave 10
     clumps:
     - clumpName: Clump 1
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 10
-      spawncooldown: 1
-      startDelay: 3
-    - clumpName: Clump 2
-      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 10
-      spawncooldown: 1
-      startDelay: 3.15
-    - clumpName: Clump 3
-      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 10
-      spawncooldown: 1
-      startDelay: 3.3
-    - clumpName: Clump 4
-      enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 15
-      spawncooldown: 0.7
-      startDelay: 5
-    - clumpName: Clump 5
-      enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
-      count: 10
-      spawncooldown: 0.5
-      startDelay: 0
-  - waveName: Wave 11
-    clumps:
-    - clumpName: Clump 1
-      enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 12
+      count: 24
       spawncooldown: 0.7
       startDelay: 5
     - clumpName: Clump 2
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 12
+      count: 24
       spawncooldown: 0.7
       startDelay: 5.15
     - clumpName: Clump 3
       enemyType: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-      count: 12
+      count: 24
       spawncooldown: 0.7
       startDelay: 5.3
     - clumpName: Clump 4
       enemyType: {fileID: -8328626094392765945, guid: e239519bdf480fe4684e1840554ace55, type: 3}
-      count: 25
+      count: 50
       spawncooldown: 1
       startDelay: 3
     - clumpName: Clump 5
       enemyType: {fileID: 6280834226085964217, guid: e67387aea18f88c4b849eccb567a7cd9, type: 3}
-      count: 14
+      count: 30
       spawncooldown: 2
       startDelay: 0
