@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 9137263508243290597}
   - component: {fileID: 2361439488366566198}
   - component: {fileID: 7881707867329781612}
+  - component: {fileID: -3743460096171384166}
+  - component: {fileID: 2370334793310545275}
   m_Layer: 7
   m_Name: Projectile3
   m_TagString: Projectile
@@ -102,6 +104,68 @@ MonoBehaviour:
   explosivePierce: 10
   explosiveRange: 3
   explosion: {fileID: 3512848270898857398, guid: 25dd07f8524dfbe4db87a97185c5bc42, type: 3}
+--- !u!114 &-3743460096171384166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067550829540775271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -957115512
+      Data2: 1260949386
+      Data3: 352782775
+      Data4: 1797738579
+    Path: event:/Tower sounds/Cannon Tower
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &2370334793310545275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2067550829540775271}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1925145965
+      Data2: 1218548405
+      Data3: 7213454
+      Data4: -434932106
+    Path: event:/Projecile sounds/Cannon Hit
+  Event: 
+  EventPlayTrigger: 2
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &589472672527412295
 PrefabInstance:
   m_ObjectHideFlags: 0

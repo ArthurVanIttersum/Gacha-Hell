@@ -110,7 +110,7 @@ MonoBehaviour:
   projectile: {fileID: 7881707867329781612, guid: 2097a2175ca84f543ab90cc0fd6f2889, type: 3}
   enemiesInRange: []
   preferredEnemy: {fileID: 1807939984453860436, guid: b1a6095674ece444db30e94ff26953e5, type: 3}
-  currentTargeting: 3
+  currentTargeting: 0
 --- !u!210 &-1128181699943569770
 SortingGroup:
   m_ObjectHideFlags: 0
