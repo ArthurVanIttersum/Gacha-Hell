@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using static Waves;
 
 public class EnemyPlacer : MonoBehaviour
@@ -19,13 +20,13 @@ public class EnemyPlacer : MonoBehaviour
     private int enemiesSpawned = 0;
     private int enemiesKilled = 0;
 
-    private enum roundState
+    public enum roundState
     {
         Spawning,
         Killing,
         Complete
     }
-    private roundState currentRoundState = roundState.Complete;
+    public roundState currentRoundState = roundState.Complete;
 
     public int currentWave
     {
@@ -73,9 +74,7 @@ public class EnemyPlacer : MonoBehaviour
     {
         if (currentWave >= waves.theWaves.Length)
         {
-            //victory
-            //Dylan, in this if statement you can add code to move to the win scene
-            return; // to stop processing further code
+            SceneManager.LoadScene("WinScene");
         }
         for (int i = 0; i < waves.theWaves[currentWave].clumps.Length; i++)
         {
